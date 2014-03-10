@@ -1,0 +1,2058 @@
+2014-03-08 18:12:42 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Site/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Site/index.ctp',
+)
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-08 17:24:09 Error: [MissingPluginException] Plugin BoostCake could not be found.
+Exception Attributes: array (
+  'plugin' => 'BoostCake',
+)
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Config/bootstrap.php(74): CakePlugin::load('BoostCake')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/Configure.php(92): include('/Users/avinash_...')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/bootstrap.php(175): Configure::bootstrap(true)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Console/ShellDispatcher.php(136): require('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Console/ShellDispatcher.php(98): ShellDispatcher->_bootstrap()
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Console/ShellDispatcher.php(54): ShellDispatcher->_initEnvironment()
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Console/ShellDispatcher.php(65): ShellDispatcher->__construct(Array)
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Console/cake.php(36): ShellDispatcher::run(Array)
+#8 {main}
+2014-03-08 18:39:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:42:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:42:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:20 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:46 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:51 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:55 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:58 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:59 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:46:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:47:29 Error: [MissingControllerException] Controller class LocalhostController could not be found.
+Exception Attributes: array (
+  'class' => 'LocalhostController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/localhost/securesocial
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:47:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:51:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:51:45 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:53:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:53:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:53:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:53:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:54:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 18:54:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:02:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:05:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:09:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:09:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:11:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:11:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:12:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:12:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:13:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:15:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:16:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:19:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:19:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:20:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:20:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:22:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:22:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:23:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:23:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:23:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:31:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:31:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:32:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:37:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:37:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:37:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:39:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:40:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:41:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:42:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:43:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:44:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:44:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:44:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:45:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:46:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:47:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:53:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:54:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 19:56:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:01:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:03:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:05:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:05:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:06:32 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/login/verify
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:06:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:06:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:22:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:24:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:24:43 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:25:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:27:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:28:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:29:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:29:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:29:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:29:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:29:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:30:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:30:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:30:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:32:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:32:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:32:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:33:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:35:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:36:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:37:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:38:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:39:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:40:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:40:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:42:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:43:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:44:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:45:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:45:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:46:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:47:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:47:43 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:48:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:49:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:50:50 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/user
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:50:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:51:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 20:51:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 21:35:07 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/Login/register
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-08 21:40:27 Error: Fatal Error (4): syntax error, unexpected ')', expecting variable (T_VARIABLE) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 79]
+2014-03-08 21:40:27 Error: [FatalErrorException] syntax error, unexpected ')', expecting variable (T_VARIABLE)
+Request URL: /securesocial/users/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 79, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 79, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-08 21:41:17 Error: Fatal Error (4): syntax error, unexpected ')', expecting variable (T_VARIABLE) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 79]
+2014-03-08 21:41:17 Error: [FatalErrorException] syntax error, unexpected ')', expecting variable (T_VARIABLE)
+Request URL: /securesocial/users/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 79, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 79, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-08 22:24:16 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:26:24 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:26:25 Error: [MissingActionException] Action UsersController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'login',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:26:28 Error: [MissingActionException] Action SiteController::verify() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'verify',
+)
+Request URL: /securesocial/Site/verify/Controller:Login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:26:39 Error: [MissingActionException] Action SiteController::verify() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'verify',
+)
+Request URL: /securesocial/Site/verify/Controller:Login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:31:37 Error: [MissingActionException] Action SiteController::verify() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'verify',
+)
+Request URL: /securesocial/Site/verify/Controller:Login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:31:45 Error: [MissingActionException] Action SiteController::verify() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'verify',
+)
+Request URL: /securesocial/Site/verify/Controller:Login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-08 22:31:46 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-08 22:32:50 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-08 22:32:52 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/login.ctp',
+)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-08 22:58:00 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 94]
+2014-03-08 22:58:00 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /securesocial/users/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 94)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 94, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 94, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-08 23:00:23 Error: Fatal Error (4): syntax error, unexpected ')', expecting '(' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 105]
+2014-03-08 23:00:23 Error: [FatalErrorException] syntax error, unexpected ')', expecting '('
+Request URL: /securesocial/users/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 105)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 105, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 105, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-08 23:54:34 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /securesocial/users/index/Controller:Site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(824): HelperCollection->__isset('Auth')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp(69): View->__get('Auth')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(935): include('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(897): View->_evaluate('/Users/avinash_...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(529): View->_render('/Users/avinash_...')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(474): View->renderLayout('', 'default')
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-03-08 23:55:07 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /securesocial/users/index/Controller:Site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(824): HelperCollection->__isset('Auth')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp(69): View->__get('Auth')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(935): include('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(897): View->_evaluate('/Users/avinash_...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(529): View->_render('/Users/avinash_...')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(474): View->renderLayout('', 'default')
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-03-08 23:55:25 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(824): HelperCollection->__isset('Auth')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp(69): View->__get('Auth')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(935): include('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(897): View->_evaluate('/Users/avinash_...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(529): View->_render('/Users/avinash_...')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(474): View->renderLayout('', 'default')
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-03-08 23:56:48 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(824): HelperCollection->__isset('Auth')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp(51): View->__get('Auth')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(935): include('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(897): View->_evaluate('/Users/avinash_...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(529): View->_render('/Users/avinash_...')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(474): View->renderLayout('', 'default')
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-03-08 23:56:54 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /securesocial/Site/index
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Auth')
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(824): HelperCollection->__isset('Auth')
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp(51): View->__get('Auth')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(935): include('/Users/avinash_...')
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(897): View->_evaluate('/Users/avinash_...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(529): View->_render('/Users/avinash_...')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(474): View->renderLayout('', 'default')
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-03-09 00:01:12 Error: [MissingActionException] Action SiteController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'login',
+)
+Request URL: /securesocial/Site/login/Controller:Users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-09 00:02:13 Error: [MissingActionException] Action SiteController::login() could not be found.
+Exception Attributes: array (
+  'controller' => 'SiteController',
+  'action' => 'login',
+)
+Request URL: /securesocial/Site/login/Controller:Users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SiteController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-03-09 00:08:42 Error: Fatal Error (4): syntax error, unexpected ';' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/UsersController.php, line 44]
+2014-03-09 00:08:42 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 44, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 44, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 00:16:22 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/logout.ctp',
+)
+Request URL: /securesocial/users/logout
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-09 00:17:32 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/UsersController.php, line 65]
+2014-03-09 00:17:32 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /securesocial/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 65)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 65, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 65, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 00:22:13 Error: [MissingControllerException] Controller class SiteController could not be found.
+Exception Attributes: array (
+  'class' => 'SiteController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-09 00:22:37 Error: [MissingControllerException] Controller class SiteController could not be found.
+Exception Attributes: array (
+  'class' => 'SiteController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-09 00:22:43 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp',
+)
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-09 00:23:14 Error: [MissingControllerException] Controller class SiteController could not be found.
+Exception Attributes: array (
+  'class' => 'SiteController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-09 16:28:04 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp, line 52]
+2014-03-09 16:28:04 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 52, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 52, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:35:32 Error: Fatal Error (4): syntax error, unexpected '<' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp, line 45]
+2014-03-09 16:35:32 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 45, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 45, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:35:51 Error: Fatal Error (4): syntax error, unexpected '<' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp, line 45]
+2014-03-09 16:35:51 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 45, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 45, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:37:07 Error: Fatal Error (4): syntax error, unexpected '<' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Layouts/default.ctp, line 46]
+2014-03-09 16:37:07 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 46, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 46, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:40:46 Error: [MissingControllerException] Controller class MyConnectController could not be found.
+Exception Attributes: array (
+  'class' => 'MyConnectController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/myConnect/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-09 16:42:59 Error: [MissingControllerException] Controller class MyConnectController could not be found.
+Exception Attributes: array (
+  'class' => 'MyConnectController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/myConnect/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-09 16:43:01 Error: Fatal Error (4): syntax error, unexpected '{' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 6]
+2014-03-09 16:43:01 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 6, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 6, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:45:08 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 6]
+2014-03-09 16:45:08 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 6)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 6, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 6, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:46:08 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 7]
+2014-03-09 16:46:08 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 7)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 7, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 7, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:46:10 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 7]
+2014-03-09 16:46:10 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 7)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 7, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 7, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 16:46:54 Error: Fatal Error (4): syntax error, unexpected '{' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 8]
+2014-03-09 16:46:54 Error: [FatalErrorException] syntax error, unexpected '{'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 8, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 8, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 17:01:40 Error: Fatal Error (4): syntax error, unexpected ''foreignKey'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 100]
+2014-03-09 17:01:40 Error: [FatalErrorException] syntax error, unexpected ''foreignKey'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 100)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 100, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 100, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 17:01:57 Error: Fatal Error (4): syntax error, unexpected ''foreignKey'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 100]
+2014-03-09 17:01:57 Error: [FatalErrorException] syntax error, unexpected ''foreignKey'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 100)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 100, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 100, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 17:02:25 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Model/User.php, line 111]
+2014-03-09 17:02:25 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';'
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 111)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 111, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 111, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-09 17:03:58 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ratings' in 'order clause'
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(User), 'SELECT `applica...', Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(User), Object(Application), 'hasMany', 'application', Array, Array, true, Array, 0, Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(User), Array)
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Component/PaginatorComponent.php(196): Model->find('all', Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/UsersController.php(77): PaginatorComponent->paginate()
+#10 [internal function]: UsersController->index()
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#13 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#14 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-03-09 17:44:15 Error: Fatal Error (4): syntax error, unexpected '<' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Users/index.ctp, line 13]
+2014-03-09 17:44:15 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 13, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 13, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:10:22 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 67]
+2014-03-10 01:10:22 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 67, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 67, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:10:53 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 69]
+2014-03-10 01:10:53 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 69, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 69, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:11:03 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 69]
+2014-03-10 01:11:03 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 69, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 69, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:13:05 Error: [MissingControllerException] Controller class ApplicationRevisionController could not be found.
+Exception Attributes: array (
+  'class' => 'ApplicationRevisionController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/application_revision/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 01:14:04 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 67]
+2014-03-10 01:14:04 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 67, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 67, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:14:59 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 95]
+2014-03-10 01:14:59 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 95)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 95, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 95, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:20:00 Error: Fatal Error (1): Call to a member function save() on a non-object in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 78]
+2014-03-10 01:20:00 Error: [FatalErrorException] Call to a member function save() on a non-object
+Request URL: /securesocial/applications/add
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/avinash_...', 78)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/avinash_...', 78, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/avinash_...', 78, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 01:52:06 Error: [MissingControllerException] Controller class ApplicationController could not be found.
+Exception Attributes: array (
+  'class' => 'ApplicationController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/application/view/4
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 01:58:49 Error: [MissingControllerException] Controller class ApplicationController could not be found.
+Exception Attributes: array (
+  'class' => 'ApplicationController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/application/view/4
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 01:58:54 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php, line 104]
+2014-03-10 01:58:54 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /securesocial/applications/view/4
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 104)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 104, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 104, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 02:10:52 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Applications/edit.ctp, line 12]
+2014-03-10 02:10:52 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /securesocial/applications/edit/6
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 12, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 12, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 02:25:26 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'app_id' cannot be null
+Request URL: /securesocial/applications/edit/6
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `so...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `so...')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(1832): DboSource->create(Object(ApplicationRevision), Array, Array)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php(133): Model->save(Array)
+#5 [internal function]: ApplicationsController->edit('6')
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ApplicationsController), Array)
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-03-10 02:46:48 Error: Fatal Error (4): syntax error, unexpected '(' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php, line 6]
+2014-03-10 02:46:48 Error: [FatalErrorException] syntax error, unexpected '('
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 6, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 6, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 02:47:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order' in 'where clause'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:47:52 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('desc') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:48:32 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:51:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order' in 'where clause'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:08 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:10 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = '10'' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:53:22 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Application.id DESC') AND `limit` = 10' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:57:03 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('DESC') AND `limit` = 10' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:57:19 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('id DESC') AND `limit` = 10' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:58:26 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('desc')' at line 1
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 02:59:43 Error: Fatal Error (4): syntax error, unexpected ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php, line 14]
+2014-03-10 02:59:43 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 14, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 14, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 02:59:52 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'limit' in 'where clause'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 03:00:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'limit' in 'where clause'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(14): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 03:08:38 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 22]
+2014-03-10 03:08:38 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 22)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:08:49 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 22]
+2014-03-10 03:08:49 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 22)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:08:50 Error: Fatal Error (64): Can't use method return value in write context in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 22]
+2014-03-10 03:08:50 Error: [FatalErrorException] Can't use method return value in write context
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Users/avinash_...', 22)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Users/avinash_...', 22, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:09:18 Error: Fatal Error (4): syntax error, unexpected '!' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 22]
+2014-03-10 03:09:18 Error: [FatalErrorException] syntax error, unexpected '!'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 22, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 22, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:09:30 Error: Fatal Error (4): syntax error, unexpected ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/View/Sites/index.ctp, line 22]
+2014-03-10 03:09:30 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 22, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 22, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:15:00 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/UsersController.php, line 83]
+2014-03-10 03:15:00 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /securesocial/users
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 83)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 83, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 83, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 03:15:31 Error: [MissingControllerException] Controller class SiteController could not be found.
+Exception Attributes: array (
+  'class' => 'SiteController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 03:15:36 Error: [MissingControllerException] Controller class SiteController could not be found.
+Exception Attributes: array (
+  'class' => 'SiteController',
+  'plugin' => NULL,
+)
+Request URL: /securesocial/site
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 03:23:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.application_id' in 'on clause'
+Request URL: /securesocial/applications/view/7
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('first', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/ApplicationsController.php(42): Model->find('first', Array)
+#7 [internal function]: ApplicationsController->view('7')
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ApplicationsController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-03-10 03:32:16 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous
+Request URL: /securesocial/
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Applica...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Applica...', Array, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Applica...', false)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Application), Array)
+#5 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/Controller/SitesController.php(15): Model->find('all', Array)
+#7 [internal function]: SitesController->index()
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
