@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
@@ -50,6 +52,7 @@ public class UserFragment extends Fragment implements OnTabChangeListener {
 			}
 
 			updateTab(tabId, tab.getFragment(), tab.getTabContentViewId());
+			System.out.println(tab.getTabContentViewId()+""+tabId);
 			return;
 		}
 
@@ -113,6 +116,17 @@ public class UserFragment extends Fragment implements OnTabChangeListener {
 		TabSpec tabSpec = tabHost.newTabSpec(tabDefinition.getId());
 		tabSpec.setIndicator(tabView);
 		tabSpec.setContent(tabDefinition.getTabContentViewId());
+		ListView v = (ListView)getActivity().findViewById(R.id.friends);
+
+        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+             "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+        "Linux", "OS/2" };
+
+        ArrayAdapter<String> files = new ArrayAdapter<String>(getActivity(), 
+                 android.R.layout.simple_list_item_1, 
+                 values);
+
+         v.setAdapter(files);
 		return tabSpec;
 	}
 

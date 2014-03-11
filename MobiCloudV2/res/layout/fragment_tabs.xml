@@ -23,7 +23,8 @@
                 android:id="@+id/friends"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="#FFFF00" />
+                android:background="#FFFF00" >
+            </FrameLayout>
 
             <FrameLayout
                 android:id="@+id/applications"

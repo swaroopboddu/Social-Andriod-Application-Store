@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 
 public class UserTabDefinition extends TabDefinition {
 	private final int _tabTitleResourceId;
@@ -49,6 +49,8 @@ public class UserTabDefinition extends TabDefinition {
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		layoutParams.weight = 1;
 		indicator.setLayoutParams(layoutParams);
+		
+		 
 
 		return indicator;
 	}

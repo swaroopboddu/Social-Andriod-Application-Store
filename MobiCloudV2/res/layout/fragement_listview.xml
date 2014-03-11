@@ -18,7 +18,8 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp" >
+        android:layout_gravity="center"
+        android:textSize="15sp" >
     </TextView>
 
 </LinearLayout>
