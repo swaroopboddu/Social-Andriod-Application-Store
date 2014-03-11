@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobiCloudV2</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="search_hint">search app</string>
+    <string name="title_activity_searchable">SearchableActivity</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="title_applications_tab">Apps</string>
+    <string name="title_friends_tab">Friends</string>
+    <string name="title_developers_tab">developers</string>
+    <string name="imageDescription">your image</string>
+    <string name="title_activity_details">DetailsActivity</string>
+
+    <string-array name="ratings">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="title_activity_user_details">UserDetailsActivity</string>
+	 <string name="userName">User Name</string>
+</resources>
