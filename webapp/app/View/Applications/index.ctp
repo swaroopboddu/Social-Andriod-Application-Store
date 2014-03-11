@@ -1,9 +1,10 @@
+<?php //pr($applications); ?>
 <div class="applications index">
 	<h2><?php echo __('Applications'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('title'); ?></th>
+			<th><?php echo $this->Paginator->sort('developer'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
 			<th><?php echo $this->Paginator->sort('count_rating'); ?></th>
 			<th><?php echo $this->Paginator->sort('rating'); ?></th>
@@ -11,15 +12,17 @@
 	</tr>
 	<?php foreach ($applications as $application): ?>
 	<tr>
-		<td><?php echo h($application['Application']['id']); ?>&nbsp;</td>
-		<td><?php echo h($application['Application']['user_id']); ?>&nbsp;</td>
+		<td><?php echo h($application['Application']['title']); ?>&nbsp;</td>
+		<td><?php echo h($application['User']['first_name']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['description']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['count_rating']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['rating']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $application['Application']['id'])); ?>
+			<?php if($application['User']['id'] == $this->Session->read('User.id')) { ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $application['Application']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $application['Application']['id']), null, __('Are you sure you want to delete # %s?', $application['Application']['id'])); ?>
+			<?php } ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

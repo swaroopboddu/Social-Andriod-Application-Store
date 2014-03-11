@@ -7,10 +7,11 @@
 		echo $this->Form->input('first_name');
 		echo $this->Form->input('last_name');
 		echo $this->Form->input('email');
-		echo $this->Form->input('role');
+		//echo $this->Form->input('role');
+		echo $this->Form->submit('Login', array('div' => true, 'type'=>'button', 'class'=>'btn btn-success', 'onclick'=>'submit();'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

@@ -1,4 +1,4 @@
-<?php pr($this->request->data); ?>
+<?php //pr($this->request->data); ?>
 <div class="applications form">
 <?php echo $this->Form->create('Application', array('enctype' => 'multipart/form-data')); ?>
 	<fieldset>
