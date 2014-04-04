@@ -92,6 +92,9 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+		'token' => array(
+			'isUnique' => array(
+				'rule' => array('isUnique')))
 	);
 //Relationships for users
 var $hasMany = array(

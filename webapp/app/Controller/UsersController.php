@@ -19,6 +19,7 @@ class UsersController extends AppController {
 public function beforeFilter() {
 	parent::beforeFilter();
 	$this->Auth->allow('add');
+	$this->Auth->allow('mobile_login');
 	if($this->Session->check('User.id')){
 		$this->Auth->allow('logout');
 	}
@@ -52,6 +53,31 @@ public function login() {
 	}
 }
 
+/***
+// To check user access from mobile
+// Generates a UUID to the user and sends it as a response to REST 
+***/
+public function mobile_login() {
+	if($this->request->is('post')) {
+		$date = date('Y/m/d H:i:s');
+		if($this->Auth->login()) {
+				$user = $this->Auth->user();
+				$user_uuid = String::uuid();
+				$this->User->updateAll(array(
+					'User.last_login'=>"'".$date."'",
+					'User.token' => "'".$user_uuid."'"),array('User.id' => $user['id']));
+					$this->redirect($this->Auth->redirectUrl(array(
+						'controller' => 'users' , 
+						'action' => 'index/token/'.$user_uuid.'.json')));		
+
+		} else {
+			$login = "Failure";
+			$this->set('_serialize', array($login));
+			$this->response->statusCode(401);
+		}
+	}
+}
+
 public function logout() {
 	if($this->Session->check('User.id')) {
 		$date = date('Y/m/d H:i:s');
@@ -73,13 +99,31 @@ public function logout() {
  * @return void
  */
 	public function index() {
-		if($this->Session->read('User.id') != null) {
+		// if($this->request->params['pass'] != null)
+		// {
+		// 	pr($this->request->params);
+		// 	exit(1);
+		// }
+		if($this->Session->read('User.id') != null || $this->request->params['pass'] != null) {
 			$this->User->recursive = 1;
-			$id = $this->Session->read('User.id');
-			if(!empty($id)) {
-				$result = $this->User->find('first', array('conditions'=>array('User.id' => $id)));
-				$this->set('result', $result);
+			if($this->Session->read('User.id') != null) {
+				$id = $this->Session->read('User.id');
+				if(!empty($id)) {
+					$result = $this->User->find('first', array('conditions'=>array('User.id' => $id)));
+					$this->set('result', $result);
+					$this->set('_serialize', array('result'));
+				}
 			}
+			if($this->request->params['pass']!=null) {
+				$token = $this->request->params['pass'][1];
+				$result = $this->User->find('first', array(
+					'conditions' => array(
+						'User.token' => $token)));
+				$this->set('result', $result);
+				$this->set('_serialize',array('result'));
+
+			}
+
 		} else { 
 			$this->redirect(array('controller' => 'users', 'action' => 'login'));
 	}
@@ -98,7 +142,10 @@ public function logout() {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-		$this->set('user', $this->User->find('first', $options));
+		$this->set(array(
+			'user' => $this->User->find('first', $options),
+			'_serialize' => $this->User->find('first', $options)
+			));
 	}
 
 /**
@@ -108,10 +155,23 @@ public function logout() {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$user = $this->request->data;
+			if($this->request->params['ext'] == 'json') {
+				$user['User']['role'] = 'mobile';
+				$user_uuid = String::uuid();
+				$user['User']['token'] = $user_uuid;
+			}
 			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+			if ($this->User->save($user)) {
+				if($this->request->params['ext'] == 'json') {
+					$this->redirect($this->Auth->redirectUrl(array(
+						'controller' => 'users' , 
+						'action' => 'index/token/'.$user_uuid.'.json')));
+				}
+				else {
+					$this->Session->setFlash(__('The user has been saved.'));
+					return $this->redirect(array('action' => 'index'));
+				}
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}

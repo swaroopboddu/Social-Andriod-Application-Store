@@ -25,6 +25,12 @@ class ApplicationsController extends AppController {
 	public function index() {
 		$this->Application->recursive = 0;
 		$this->set('applications', $this->Paginator->paginate());
+		$this->set('_serialize', array('applications'));
+		//$applications = $this->Application->find('all');
+		// $this->set(array(
+		// 	'applications' => $applications,
+		// 	'_serialize' => array($applications)
+		// 	));
 	}
 
 /**

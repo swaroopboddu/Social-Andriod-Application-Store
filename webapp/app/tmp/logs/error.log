@@ -2056,3 +2056,180 @@ Stack Trace:
 #10 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest), Object(CakeResponse))
 #11 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/securesocial/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2014-04-04 02:44:18 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/json/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/json/index.ctp',
+)
+Request URL: /webapp/users.json
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/JsonView.php(107): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): JsonView->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 02:45:50 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/json/view.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/json/view.ctp',
+)
+Request URL: /webapp/users/view/9.json
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/JsonView.php(107): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): JsonView->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 02:47:02 Error: Fatal Error (4): syntax error, unexpected ''_serialize'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 103]
+2014-04-04 02:47:02 Error: [FatalErrorException] syntax error, unexpected ''_serialize'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /webapp/users/view/9.json
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 103)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 103, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 103, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 04:37:41 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Applications/json/view.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Applications/json/view.ctp',
+)
+Request URL: /webapp/applications/9.json
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/JsonView.php(107): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): JsonView->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 05:08:13 Error: [MissingActionException] Action LoginController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'LoginController',
+  'action' => 'index',
+)
+Request URL: /webapp/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(LoginController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-04 05:30:02 Error: Fatal Error (64): Cannot redeclare UsersController::login() in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 61]
+2014-04-04 05:30:02 Error: [FatalErrorException] Cannot redeclare UsersController::login()
+Request URL: /webapp/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/avinash_...', 61)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/avinash_...', 61, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/avinash_...', 61, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 05:30:03 Error: Fatal Error (64): Cannot redeclare UsersController::login() in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 61]
+2014-04-04 05:30:03 Error: [FatalErrorException] Cannot redeclare UsersController::login()
+Request URL: /webapp/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/avinash_...', 61)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/avinash_...', 61, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/avinash_...', 61, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 05:30:17 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 70]
+2014-04-04 05:30:17 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /webapp/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 70, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 70, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 05:30:26 Error: Fatal Error (4): syntax error, unexpected '}' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 71]
+2014-04-04 05:30:26 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /webapp/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 71)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 71, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 71, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 06:03:42 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php, line 71]
+2014-04-04 06:03:42 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /webapp/users/login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/avinash_...', 71)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/avinash_...', 71, Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/avinash_...', 71, Array)
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-04 06:19:45 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'e1-3498-4c93-9e68-68fcced748bd  WHERE `User`.`id` = 6' at line 1
+Request URL: /webapp/users/mobile_login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('UPDATE `social_...', Array)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Model/Datasource/Database/Mysql.php(400): DboSource->execute('UPDATE `social_...')
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Model/Model.php(2541): Mysql->update(Object(User), Array, NULL, Array)
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/Controller/UsersController.php(68): Model->updateAll(Array, Array)
+#5 [internal function]: UsersController->mobile_login()
+#6 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-04-04 06:25:47 Error: [MissingControllerException] Controller class MobileLoginController could not be found.
+Exception Attributes: array (
+  'class' => 'MobileLoginController',
+  'plugin' => NULL,
+)
+Request URL: /webapp/mobile_login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-04 06:25:59 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp',
+)
+Request URL: /webapp/users/mobile_login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 06:35:31 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp',
+)
+Request URL: /webapp/users/mobile_login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 06:36:03 Error: [MissingViewException] View file "/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/View/Users/mobile_login.ctp',
+)
+Request URL: /webapp/users/mobile_login
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-04 06:43:46 Error: [MissingActionException] Action UsersController::token() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'token',
+)
+Request URL: /webapp/users/token/123123231.json
+Stack Trace:
+#0 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/avinash_vallab/Desktop/My Programs/eclipse-php/workspace/webapp/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
