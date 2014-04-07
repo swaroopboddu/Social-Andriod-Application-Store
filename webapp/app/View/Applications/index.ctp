@@ -12,13 +12,13 @@
 	</tr>
 	<?php foreach ($applications as $application): ?>
 	<tr>
-		<td><?php echo h($application['Application']['title']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($application['Application']['title'], array('controller' =>'applications', 'action' => 'download_app', $application['Application']['id'])); ?></td>
 		<td><?php echo h($application['User']['first_name']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['description']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['count_rating']); ?>&nbsp;</td>
 		<td><?php echo h($application['Application']['rating']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $application['Application']['id'])); ?>
+			<?php //echo $this->Html->link(__('View'), array('action' => 'view', $application['Application']['id'])); ?>
 			<?php if($application['User']['id'] == $this->Session->read('User.id')) { ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $application['Application']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $application['Application']['id']), null, __('Are you sure you want to delete # %s?', $application['Application']['id'])); ?>

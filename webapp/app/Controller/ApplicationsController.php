@@ -79,6 +79,7 @@ class ApplicationsController extends AppController {
 							'revision_number' => "1.0.0",
 							'path' => $dest_file_path,
 							'size' => $upload_file_array['size'],
+							'filename' => $upload_file_array['name'],
 							)
 						);
 					//pr($application_revision);
@@ -134,6 +135,7 @@ class ApplicationsController extends AppController {
 							'revision_number' => $rev_num,
 							'path' => $dest_file_path,
 							'size' => $upload_file_array['size'],
+							'filename' => $upload_file_array['name'],
 							)
 						);
 					//pr($application_revision);
@@ -187,4 +189,27 @@ class ApplicationsController extends AppController {
 			$this->Session->setFlash(__('The application could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+/**
+* Method to download the file
+*/
+
+	public function download_app($id = null) {
+		$this->Application->recursive = -1;
+		if($id != null) {
+			$app = $this->Application->find('first', array('conditions'=>array('Application.id' => $id)));
+			$name = $this->ApplicationRevision->find('first', 
+									array('conditions' => array('ApplicationRevision.app_id' => $id),
+											'order' => array('ApplicationRevision.id' => 'desc')));
+			$this->response->file($app['Application']['path'], array('download' => true, 'name' => $name['ApplicationRevision']['filename']));
+			return $this->response;
+		}
+	}
+}
+
+
+
+
+
+

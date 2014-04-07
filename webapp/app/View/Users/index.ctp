@@ -17,11 +17,10 @@
 	</tr>
 	<?php foreach ($result['Application'] as $application): ?>
 	<tr>
-		<td><?php echo $this->Html->link($application['title'], $application['path']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($application['title'], array('controller' =>'applications', 'action' => 'download_app', $application['id'])); ?>&nbsp;</td>
 		<td><?php echo h($application['description']); ?>&nbsp;</td>
 		<td><?php echo h($application['rating']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('controller' =>'applications', 'action' => 'view', $application['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('controller' =>'applications', 'action' => 'edit', $application['id'])); ?>
 			<?php echo $this->Form->postLink(__('Delete'), array('controller' =>'applications', 'action' => 'delete', $application['id']), null, __('Are you sure you want to delete # %s?', $application['title'])); ?>
 		</td>

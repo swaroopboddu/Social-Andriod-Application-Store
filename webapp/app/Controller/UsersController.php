@@ -112,6 +112,7 @@ public function logout() {
 					$result = $this->User->find('first', array('conditions'=>array('User.id' => $id)));
 					foreach ($result['Application'] as $app) {
 						pr($app['id']);
+						
 					}
 					//$applicationPath = $this->ApplicaitonRevision->find('first', array())
 					$this->set('result', $result);
@@ -160,17 +161,21 @@ public function logout() {
 	public function add() {
 		if ($this->request->is('post')) {
 			$user = $this->request->data;
-			if($this->request->params['ext'] == 'json') {
-				$user['User']['role'] = 'mobile';
-				$user_uuid = String::uuid();
-				$user['User']['token'] = $user_uuid;
-			}
+				if(isset($this->request->params['ext'])) {
+					if($this->request->params['ext'] == 'json') {
+						$user['User']['role'] = 'mobile';
+						$user_uuid = String::uuid();
+						$user['User']['token'] = $user_uuid;
+					}
+				}
 			$this->User->create();
 			if ($this->User->save($user)) {
-				if($this->request->params['ext'] == 'json') {
+				if(isset($this->request->params['ext'])){
+					if($this->request->params['ext'] == 'json') {
 					$this->redirect($this->Auth->redirectUrl(array(
 						'controller' => 'users' , 
 						'action' => 'index/token/'.$user_uuid.'.json')));
+					}
 				}
 				else {
 					$this->Session->setFlash(__('The user has been saved.'));
