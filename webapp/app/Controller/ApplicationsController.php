@@ -71,6 +71,7 @@ class ApplicationsController extends AppController {
 
 				//Save the parameters in application table
 				$this->request->data['Application']['user_id'] = $this->Session->read('User.id');
+				$this->request->data['Application']['path'] = APP."webroot/uploads/".$dest_file_path;
 				if ($this->Application->save($this->request->data)) {
 					$application_revision = array(
 						'ApplicationRevision' => array(
@@ -125,7 +126,7 @@ class ApplicationsController extends AppController {
 
 				$rev_num = $this->request->data['Application']['revision_number'];
 				unset($this->request->data['Application']['revision_number']);
-
+				$this->request->data['Application']['path'] = APP."webroot/uploads/".$dest_file_path;
 				if ($this->Application->save($this->request->data)) {
 					$application_revision = array(
 						'ApplicationRevision' => array(

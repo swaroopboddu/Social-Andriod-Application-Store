@@ -1,4 +1,4 @@
-<?php //pr($result); ?>
+<?php pr($result); ?>
 <div class="row-fluid">
 	<div class="span3">
 		<ul>
@@ -17,7 +17,7 @@
 	</tr>
 	<?php foreach ($result['Application'] as $application): ?>
 	<tr>
-		<td><?php echo h($application['title']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($application['title'], $application['path']); ?>&nbsp;</td>
 		<td><?php echo h($application['description']); ?>&nbsp;</td>
 		<td><?php echo h($application['rating']); ?>&nbsp;</td>
 		<td class="actions">

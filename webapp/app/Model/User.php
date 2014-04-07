@@ -110,6 +110,19 @@ var $hasMany = array(
 		'conditions' => array('status' => 'approved'),
 		'order' => 'friend_user_id DESC'
 		),
+	'UserFollower' => array(
+		'className' => 'UserFollower',
+		'foreignKey' => 'user_id',
+		'order' => 'follower_user_id DESC'
+		),
+	// 'Group' => array(
+	// 	'className' => 'Group',
+	// 	'order' => 'id DESC'
+	// 	),
+	'GroupsUser' => array(
+		'className' => 'GroupsUser',
+		'order' => 'id DESC'
+		),
 	);
 public function matchPasswords($data) {
 	if($data['password'] == $this->data['User']['password_confirmation']) {

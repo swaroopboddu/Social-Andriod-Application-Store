@@ -36,6 +36,7 @@ Router::resourceMap(array(
 	Router::mapResources('users');
 	Router::mapResources('applications');
 	Router::mapResources('groups');
+	
 	Router::parseExtensions('json');
 
 
