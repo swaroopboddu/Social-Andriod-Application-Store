@@ -25,34 +25,30 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="178dp"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="178dp"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/UserName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="@string/userName"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-                <Button
-                android:id="@+id/applicationButton"
+            <TextView
+                android:id="@+id/UserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:background="@color/LimeGreen"
-                android:text="Add Friend"
-                android:textColor="@color/white" />
-            </LinearLayout>
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/userName"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            
+            <Button
+                android:id="@+id/applicationButton"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_margin="15dp"
+                android:background="@color/OrangeRed"
+                android:text="@string/addFriendButton"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/WhiteSmoke"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
@@ -62,29 +58,11 @@
         android:layout_height="50dp"
         android:layout_margin="15dp"
         android:layout_marginBottom="5dp"
-        android:background="@color/LimeGreen"
-        android:text="View Friends"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/applicationButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/LimeGreen"
-        android:text="View Application"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/developerButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/LimeGreen"
-        android:text="View Following"
-        android:textColor="@color/white" />
-  
+        android:background="@color/OrangeRed"
+        android:text="@string/viewDetails"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/WhiteSmoke"
+        android:textStyle="bold" />
 
 </LinearLayout>

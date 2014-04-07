@@ -10,6 +10,7 @@ import java.util.List;
  *
  */
 public class User implements ListData{
+	String userId;
 	String userName;
 	String imageUrl;
 	List<Application> apps;
@@ -54,6 +55,18 @@ public class User implements ListData{
 	@Override
 	public String getImageUri() {
 		return imageUrl;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public List<Developer> getDevelopers() {
+		return developers;
+	}
+	public void setDevelopers(List<Developer> developers) {
+		this.developers = developers;
 	}
 	
 	

@@ -1,5 +1,9 @@
 package edu.asu.mobicloud;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -9,12 +13,15 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import edu.asu.mobicloud.network.RestAPI;
+import edu.asu.mobicloud.rest.model.LoginResult;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -31,7 +38,9 @@ public class LoginActivity extends Activity {
 	/**
 	 * The default email to populate the email field with.
 	 */
-	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
+	public static final String EXTRA_EMAIL = "edu.asu.mobicloud.authenticator.extra.EMAIL";
+
+	private static final String TAG = "edu.asu.mobicloud.LoginActivity";
 
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
@@ -92,20 +101,23 @@ public class LoginActivity extends Activity {
 						loadRegistration();
 					}
 				});
+
 	}
 
 	protected void loadRegistration() {
-		startActivityForResult(new Intent(this, RegistrationActivity.class),1);
+		startActivityForResult(new Intent(this, RegistrationActivity.class), 1);
 	}
+
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    // Check which request we're responding to
-	    if (requestCode == 1) {
-	        // Make sure the request was successful
-	        if (resultCode == RESULT_OK) {
-	            
-	        }
-	    }
+		// Check which request we're responding to
+		if (requestCode == 1) {
+			// Make sure the request was successful
+			if (resultCode == RESULT_OK) {
+
+			}
+		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -215,37 +227,32 @@ public class LoginActivity extends Activity {
 	 * Represents an asynchronous login/registration task used to authenticate
 	 * the user.
 	 */
-	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+	public class UserLoginTask extends AsyncTask<Void, Void, LoginResult> {
 		@Override
-		protected Boolean doInBackground(Void... params) {
+		protected LoginResult doInBackground(Void... params) {
 			// TODO: attempt authentication against a network service.
 
-			try {
-				// Simulate network access.
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				return false;
-			}
+			return RestAPI.checkLogin(mEmail, mPassword);
 
-			for (String credential : DUMMY_CREDENTIALS) {
-				String[] pieces = credential.split(":");
-				if (pieces[0].equals(mEmail)) {
-					// Account exists, return true if the password matches.
-					return pieces[1].equals(mPassword);
-				}
-			}
+			/*
+			 * for (String credential : DUMMY_CREDENTIALS) { String[] pieces =
+			 * credential.split(":"); if (pieces[0].equals(mEmail)) { // Account
+			 * exists, return true if the password matches. return
+			 * pieces[1].equals(mPassword); } }
+			 */
 
 			// TODO: register the new account here.
-			return true;
+
 		}
 
 		@Override
-		protected void onPostExecute(final Boolean success) {
+		protected void onPostExecute(final LoginResult result) {
 			mAuthTask = null;
 			showProgress(false);
 
-			if (success) {
-				openMain();
+			if (result != null && result.getUser().getId() != null
+					&& !(result.getUser().getId().isEmpty())) {
+				openMain(result);
 				finish();
 			} else {
 				mPasswordView
@@ -261,9 +268,18 @@ public class LoginActivity extends Activity {
 		}
 	}
 
-	public void openMain() {
+	public void openMain(LoginResult result) {
+		ObjectOutputStream objectOut = null;
+		try {
+			FileOutputStream fileOut = getApplicationContext().openFileOutput(
+					"datafile", Activity.MODE_PRIVATE);
+			objectOut = new ObjectOutputStream(fileOut);
+			objectOut.writeObject(result);
+			fileOut.getFD().sync();
+		} catch (IOException e) {
+			Log.d(TAG, e.getMessage());
+		}
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
-
 	}
 }

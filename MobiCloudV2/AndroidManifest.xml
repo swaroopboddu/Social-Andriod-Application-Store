@@ -7,6 +7,30 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19" />
+    <!-- GCM connects to Internet Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <permission
+        android:name="edu.asu.mobicloud.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="edu.asu.mobicloud.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permission to vibrate -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +52,9 @@
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.asu.mobicloud.MainActivity" />
         </activity>
 
         <meta-data
@@ -56,6 +83,42 @@
             android:name="edu.asu.mobicloud.UserDetailsActivity"
             android:label="@string/title_activity_user_details" >
         </activity>
+        <activity
+            android:name="edu.asu.mobicloud.DeveloperDetailsActivity"
+            android:label="@string/title_activity_developer_details" >
+        </activity>
+        <activity
+            android:name="edu.asu.mobicloud.GroupDetailsActivity"
+            android:label="@string/title_activity_group_details" >
+        </activity>
+        <activity
+            android:name="edu.asu.mobicloud.CreateGroupActivity"
+            android:label="@string/title_activity_create_group" >
+        </activity>
+        <activity
+            android:name="edu.asu.mobicloud.NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName="com.example.notifier.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.notifier.MainActivity" />
+        </activity>
+
+        <receiver
+            android:name="edu.asu.mobicloud.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="edu.asu.mobicloud" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="edu.asu.mobicloud.gcm.GCMIntentService" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

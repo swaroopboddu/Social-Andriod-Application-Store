@@ -5,8 +5,13 @@
      android:actionViewClass="android.widget.SearchView"
      android:icon="@drawable/ic_menu_search"
      android:showAsAction="ifRoom|collapseActionView"
-     android:title="@string/title_activity_searchable"/>
-    
+     android:title="@string/title_activity_searchable"
+     />
+    <item
+        android:id="@+id/action_creategroup"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_creategroup"/>
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
