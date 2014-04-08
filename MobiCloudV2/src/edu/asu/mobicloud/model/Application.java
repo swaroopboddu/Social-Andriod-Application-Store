@@ -3,6 +3,7 @@
  */
 package edu.asu.mobicloud.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Parcel;
@@ -19,18 +20,37 @@ public class Application implements ListData, Parcelable {
 	String developer;
 	String description;
 	String imageUri;
-	List<Comment> comments;
-	public Application()
-	{
-		
+	int rating;
+
+	public void setRating(int rating) {
+		this.rating = rating;
 	}
+
+	int downloads;
+	List<Comment> comments;
+
+	public int getDownloads() {
+		return downloads;
+	}
+
+	public void setDownloads(int downloads) {
+		this.downloads = downloads;
+	}
+
+	public Application() {
+
+	}
+
 	public Application(Parcel input) {
 		this.name = input.readString();
 		this.id = input.readString();
 		this.developer = input.readString();
 		this.description = input.readString();
 		this.imageUri = input.readString();
-
+		comments = new ArrayList<Comment>();
+		input.readTypedList(comments, Comment.CREATOR);
+		rating = input.readInt();
+		downloads = input.readInt();
 	}
 
 	public String getName() {
@@ -95,10 +115,15 @@ public class Application implements ListData, Parcelable {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(this.id);
-		dest.writeString(imageUri);
+		dest.writeString(this.name);
+		dest.writeString(id);
+		
 		dest.writeString(developer);
-		dest.writeString(name);
+		dest.writeString(description);
+		dest.writeString(imageUri);
+		dest.writeTypedList((comments));
+		dest.writeInt(rating);
+		dest.writeInt(downloads);
 
 	}
 
@@ -117,5 +142,10 @@ public class Application implements ListData, Parcelable {
 		}
 
 	};
+
+	public float getRating() {
+		// TODO Auto-generated method stub
+		return rating;
+	}
 
 }
