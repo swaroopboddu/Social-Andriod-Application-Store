@@ -15,7 +15,7 @@ import edu.asu.mobicloud.model.User;
  * 
  */
 public class ApplicationDataProvider {
-	private static  ApplicationDataProvider appProvider;
+	private static ApplicationDataProvider appProvider;
 
 	private ApplicationDataProvider() {
 
@@ -34,15 +34,13 @@ public class ApplicationDataProvider {
 		List<Comment> cList = new ArrayList<Comment>();
 		Comment c = new Comment();
 		c.setMessage("Awesome App");
-		User u = new User();
-		u.setUserName("Hello");
-		c.setUser(u);
+
+		String name = ("Tommy");
+		c.setUser(name);
 		cList.add(c);
 		Comment c1 = new Comment();
-		c.setMessage("Awesome App - good one");
-		User u1 = new User();
-		u.setUserName("UserName2");
-		c.setUser(u1);
+		c1.setMessage("Awesome App - good one");
+		c1.setUser("Gimmy");
 		cList.add(c1);
 
 		for (int i = 0; i < 10; i++) {
@@ -52,6 +50,8 @@ public class ApplicationDataProvider {
 			a.setDeveloper("user1");
 			a.setImageUri("");
 			a.setName("SampleApp" + i);
+			a.setRating(3);
+			a.setDownloads(2);
 			list.add(a);
 		}
 		return list;

@@ -227,12 +227,12 @@ public class LoginActivity extends Activity {
 	 * Represents an asynchronous login/registration task used to authenticate
 	 * the user.
 	 */
-	public class UserLoginTask extends AsyncTask<Void, Void, LoginResult> {
+	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
-		protected LoginResult doInBackground(Void... params) {
+		protected Boolean doInBackground(Void... params) {
 			// TODO: attempt authentication against a network service.
 
-			return RestAPI.checkLogin(mEmail, mPassword);
+			return true;
 
 			/*
 			 * for (String credential : DUMMY_CREDENTIALS) { String[] pieces =
@@ -246,13 +246,12 @@ public class LoginActivity extends Activity {
 		}
 
 		@Override
-		protected void onPostExecute(final LoginResult result) {
+		protected void onPostExecute(final Boolean result) {
 			mAuthTask = null;
 			showProgress(false);
 
-			if (result != null && result.getUser().getId() != null
-					&& !(result.getUser().getId().isEmpty())) {
-				openMain(result);
+			if (result) {
+				openMain();
 				finish();
 			} else {
 				mPasswordView
@@ -268,17 +267,7 @@ public class LoginActivity extends Activity {
 		}
 	}
 
-	public void openMain(LoginResult result) {
-		ObjectOutputStream objectOut = null;
-		try {
-			FileOutputStream fileOut = getApplicationContext().openFileOutput(
-					"datafile", Activity.MODE_PRIVATE);
-			objectOut = new ObjectOutputStream(fileOut);
-			objectOut.writeObject(result);
-			fileOut.getFD().sync();
-		} catch (IOException e) {
-			Log.d(TAG, e.getMessage());
-		}
+	public void openMain() {
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
