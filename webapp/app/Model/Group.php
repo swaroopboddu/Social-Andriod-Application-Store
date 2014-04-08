@@ -28,6 +28,8 @@ class Group extends AppModel {
 		),
 	);
 
+	public $hasOne = 'User';
+
 	// var $hasAndBelongsToMany = array(
 	// 'User' => array(
 	// 	'className' => 'User',

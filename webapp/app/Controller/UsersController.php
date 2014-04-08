@@ -110,10 +110,10 @@ public function logout() {
 				$id = $this->Session->read('User.id');
 				if(!empty($id)) {
 					$result = $this->User->find('first', array('conditions'=>array('User.id' => $id)));
-					foreach ($result['Application'] as $app) {
-						pr($app['id']);
+					// foreach ($result['Application'] as $app) {
+					// 	//pr($app['id']);
 						
-					}
+					// }
 					//$applicationPath = $this->ApplicaitonRevision->find('first', array())
 					$this->set('result', $result);
 					$this->set('_serialize', array('result'));

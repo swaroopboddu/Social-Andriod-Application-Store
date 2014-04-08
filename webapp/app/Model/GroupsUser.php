@@ -20,7 +20,7 @@ class GroupsUser extends AppModel {
  */
 	public $displayField = 'id';
 
-	// public $belongsTo = 'Group';
+	public $belongsTo = 'Group';
 
 	// var $belongsTo = array(
 	// 	'Group' => array(

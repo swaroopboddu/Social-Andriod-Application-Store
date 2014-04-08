@@ -58,8 +58,26 @@ echo $this->fetch('script');
 		</div>
 	</div>
 		</header>
+		<?php 
+		function echoActiveClassIfRequestMatches($requestUri)
+		{
+		    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+		    if ($current_file_name == $requestUri)
+		        echo 'class="active"';
+		}
+		?>
 		<div id="content">
-
+			<div class="row-fluid">
+				<div class="navbar navbar-inverse">
+					<div class="navbar-inner">
+						<ul class="nav" id="main-nav">
+							<li <?=echoActiveClassIfRequestMatches("users")?>><?php echo $this->Html->link('Home', array('controller' => 'users', 'action' => 'index')); ?></li>
+		         			<li <?=echoActiveClassIfRequestMatches("applications")?>><?php echo $this->Html->link('Applications', array('controller' => 'applications', 'action' => 'index')); ?></li>
+		         
+		            	</ul>
+		            </div>
+				</div>
+			</div>
 		<?php echo $this->Session->flash(); ?>
 		<?php echo $this->Session->flash('auth'); ?>
 		
@@ -68,6 +86,14 @@ echo $this->fetch('script');
 		<div id="footer">
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); ?>
 </body>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#main-nav li').on('click', function() {
+    $(this).parent().parent().find('.active').removeClass('active');
+    $(this).parent().addClass('active').css('font-weight', 'bold');
+});
+});
+</script>
 </html>

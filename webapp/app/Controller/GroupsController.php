@@ -15,6 +15,7 @@ class GroupsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	public $uses = array('Group','User','GroupsUser');
 
 /**
  * index method
@@ -22,8 +23,29 @@ class GroupsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Group->recursive = 0;
-		$this->set('groups', $this->Paginator->paginate());
+		//pr($this->request->params);
+		//exit(1);
+		//if(isset($this->request->params['pass'][0])){
+			//if($this->request->params['pass'][0]){
+		$headers = apache_request_headers();
+		if(isset($headers['token'])) {
+			$token = $headers['token'];
+				$id = $this->User->find('first', array(
+					'conditions' => array('User.token' => $token),
+					'fields' => array('User.id'),
+					'recursive' => 0));
+				$groups = $this->GroupsUser->find('all', array(
+					'conditions' => array('GroupsUser.user_id' => $id['User']['id'])));
+				pr($groups);
+				$this->set('groups', $groups);
+				$this->set('_serialize', array('groups'));
+		} else {
+			$this->Group->recursive = -1;
+			//$group = $this->Group->find('all', array('order' => array('Group.id' => 'desc')));
+ 			$this->set('groups', $this->Paginator->paginate());
+ 			//$this->set('groups', $group);
+			$this->set('_serialize', array('groups'));
+		}
 	}
 
 /**
@@ -48,14 +70,27 @@ class GroupsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$headers = apache_request_headers();
+			if(isset($headers['token'])) {
+				$user = $this->User->find('first', array(
+					'conditions' => array('User.token' => $token),
+					'recursive' => 0));
+			$this->request->data['user_id'] = $id['User']['id'];
 			$this->Group->create();
 			if ($this->Group->save($this->request->data)) {
-				$this->Session->setFlash(__('The group has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			// 	$this->Session->setFlash(__('The group has been saved.'));
+			// 	return $this->redirect(array('action' => 'index'));
+			 	$lastInsert = $this->Group->getLastInsertID();
+			 	$result = $this->Group->find('first', array('conditions' => array('Group.id' => $lastInsert)));
+			 	$this->set('result', $result);
+				$this->set('_serialize',array('result'));
+			 } } else {
+				$result = "Failure";
+			 	$this->set('result', $result);
+				$this->set('_serialize',array('result'));
 			}
 		}
+		return $this->redirect(array('action' => 'index.json'));
 	}
 
 /**
@@ -70,15 +105,34 @@ class GroupsController extends AppController {
 			throw new NotFoundException(__('Invalid group'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Group->save($this->request->data)) {
-				$this->Session->setFlash(__('The group has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			$headers = apache_request_headers();
+			if(isset($headers['token'])) {
+				$user = $this->User->find('first', array(
+					'conditions' => array('User.token' => $token),
+					'recursive' => 0));
+				$group = $this->Group->find('first', array('conditions' => array('Group.id' => $id)));
+				//To check if admin is editing the Group info
+				if($user['User']['id'] == $group['Group']['user_id']) { 
+					if ($this->Group->save($this->request->data)) {
+						$result = $this->request->data;
+					 	$this->set('result', $result);
+						$this->set('_serialize',array('result'));
+			 		} else {
+						$result = "Failure";
+					 	$this->set('result', $result);
+						$this->set('_serialize',array('result'));
+					} 
+			//else {
+			//	$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+				} else {
+					$result = "Did you really think you can do that!!!";
+					$this->set('result', $result);
+					$this->set('_serialize',array('result'));
+				}
 			}
-		} else {
-			$options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
-			$this->request->data = $this->Group->find('first', $options);
+			//$options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
+			//$this->request->data = $this->Group->find('first', $options);
+			return $this->redirect(array('action' => 'index.json'));
 		}
 	}
 
@@ -95,10 +149,30 @@ class GroupsController extends AppController {
 			throw new NotFoundException(__('Invalid group'));
 		}
 		$this->request->onlyAllow('post', 'delete');
-		if ($this->Group->delete()) {
-			$this->Session->setFlash(__('The group has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The group could not be deleted. Please, try again.'));
+		$headers = apache_request_headers();
+		if(isset($headers['token'])) {
+			$user = $this->User->find('first', array(
+				'conditions' => array('User.token' => $token),
+				'recursive' => 0));
+			$group = $this->Group->find('first', array('conditions' => array('Group.id' => $id)));
+			//To check if admin is editing the Group info
+			if($user['User']['id'] == $group['Group']['user_id']) { 
+				if ($this->Group->delete()) {
+					$result = "Success";
+					$this->set('result', $result);
+					$this->set('_serialize',array('result'));
+			//$this->Session->setFlash(__('The group has been deleted.'));
+				} else {
+					$result = "Failed to Delete the group";
+					$this->set('result', $result);
+					$this->set('_serialize',array('result'));
+				}
+			} else {
+				$result = "Did you really think you can do that!!!";
+				$this->set('result', $result);
+				$this->set('_serialize',array('result'));
+			}
+			//$this->Session->setFlash(__('The group could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index.json'));
 	}}

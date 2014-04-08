@@ -18,7 +18,7 @@ class UserFollowersController extends AppController {
 
 /**
  * index method
- *
+ * To view the lsit of Followers
  * @return void
  */
 	public function index() {
@@ -33,13 +33,13 @@ class UserFollowersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
-		if (!$this->UserFollower->exists($id)) {
-			throw new NotFoundException(__('Invalid user follower'));
-		}
-		$options = array('conditions' => array('UserFollower.' . $this->UserFollower->primaryKey => $id));
-		$this->set('userFollower', $this->UserFollower->find('first', $options));
-	}
+	// public function view($id = null) {
+	// 	if (!$this->UserFollower->exists($id)) {
+	// 		throw new NotFoundException(__('Invalid user follower'));
+	// 	}
+	// 	$options = array('conditions' => array('UserFollower.' . $this->UserFollower->primaryKey => $id));
+	// 	$this->set('userFollower', $this->UserFollower->find('first', $options));
+	// }
 
 /**
  * add method
@@ -48,12 +48,42 @@ class UserFollowersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->UserFollower->create();
-			if ($this->UserFollower->save($this->request->data)) {
-				$this->Session->setFlash(__('The user follower has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+			if(isset($this->request->params['pass'][0])){
+				if($this->request->params['pass'][0]){
+					$user = $this->User->find('first', array('conditions' => 
+								array('User.token' => $this->request->params['pass'][0]),
+									'recursive' => 0));
+					$data['UserFollower']['user_id'] = $user['User']['id'];
+					$data['UserFollower']['follower_user_id'] = isset($this->request->params['pass'][0];
+					$this->UserFollower->create();
+					if ($this->UserFollower->save($this->request->data)) {
+						$notify['Notification']['user_id'] = isset($this->request->params['pass'][0];
+						$notify['Notification']['description'] = $user['User']['first_name']." ".$user['User']['last_name']." is now following you";
+						$notify['status'] = 1;
+						if($this->Notification->save($notify)){
+							$result = "Success";
+							$this->set('result', $result);
+							$this->set('_serialize', array('result'));
+						} else {
+							//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+							$result = "Failure";
+							$this->set('result', $result);
+							$this->set('_serialize', array('result'));
+						}
+					} else {
+						//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+						$result = "Failure";
+						$this->set('result', $result);
+						$this->set('_serialize', array('result'));
+					}
+
+				// $this->Session->setFlash(__('The user follower has been saved.'));
+				// return $this->redirect(array('action' => 'index'));
+			} } else {
+				//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+				$result = "Failure";
+				$this->set('result', $result);
+				$this->set('_serialize', array('result'));
 			}
 		}
 	}
@@ -65,22 +95,22 @@ class UserFollowersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
-		if (!$this->UserFollower->exists($id)) {
-			throw new NotFoundException(__('Invalid user follower'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->UserFollower->save($this->request->data)) {
-				$this->Session->setFlash(__('The user follower has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('UserFollower.' . $this->UserFollower->primaryKey => $id));
-			$this->request->data = $this->UserFollower->find('first', $options);
-		}
-	}
+	// public function edit($id = null) {
+	// 	if (!$this->UserFollower->exists($id)) {
+	// 		throw new NotFoundException(__('Invalid user follower'));
+	// 	}
+	// 	if ($this->request->is(array('post', 'put'))) {
+	// 		if ($this->UserFollower->save($this->request->data)) {
+	// 			$this->Session->setFlash(__('The user follower has been saved.'));
+	// 			return $this->redirect(array('action' => 'index'));
+	// 		} else {
+	// 			$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+	// 		}
+	// 	} else {
+	// 		$options = array('conditions' => array('UserFollower.' . $this->UserFollower->primaryKey => $id));
+	// 		$this->request->data = $this->UserFollower->find('first', $options);
+	// 	}
+	// }
 
 /**
  * delete method

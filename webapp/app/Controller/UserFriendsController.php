@@ -15,6 +15,7 @@ class UserFriendsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	public $uses = array('Notification');
 
 /**
  * index method

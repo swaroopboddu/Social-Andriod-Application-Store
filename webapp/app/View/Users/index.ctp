@@ -1,4 +1,4 @@
-<?php pr($result); ?>
+<?php //pr($result); ?>
 <div class="row-fluid">
 	<div class="span3">
 		<ul>
