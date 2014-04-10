@@ -1,8 +1,6 @@
 package edu.asu.mobicloud;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.nio.channels.AsynchronousCloseException;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -13,35 +11,29 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import edu.asu.mobicloud.network.RestAPI;
-import edu.asu.mobicloud.rest.model.LoginResult;
+import edu.asu.mobicloud.retrofit.RestClient;
+import edu.asu.mobicloud.util.PreferencesUtil;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
 public class LoginActivity extends Activity {
-	/**
-	 * A dummy authentication store containing known user names and passwords.
-	 * TODO: remove after connecting to a real authentication system.
-	 */
-	private static final String[] DUMMY_CREDENTIALS = new String[] {
-			"foo@example.com:hello", "bar@example.com:world" };
 
 	/**
-	 * The default email to populate the email field with.
+	 * The email to populate the email field with.
 	 */
 	public static final String EXTRA_EMAIL = "edu.asu.mobicloud.authenticator.extra.EMAIL";
-
+	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
 	private static final String TAG = "edu.asu.mobicloud.LoginActivity";
-
+	private PreferencesUtil prefsUtil;
+	public String userName = "satya swaroop";
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */
@@ -57,12 +49,26 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
+	private TokenCheckTask mTokenTask;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		// Initialize preferences util
+		prefsUtil = new PreferencesUtil(getApplicationContext(), TAG);
 		setContentView(R.layout.activity_login);
+		mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
+		mLoginFormView = findViewById(R.id.login_form);
+		mLoginStatusView = findViewById(R.id.login_status);
+		// If token is available skip this activity and forward to main activity
+		String token = prefsUtil.getPreference(TOKEN);
+		if (token != null) {
+			mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
+			showProgress(true);
+			mTokenTask = new TokenCheckTask();
+			mTokenTask.execute(token);
+
+		}
 
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
@@ -83,9 +89,7 @@ public class LoginActivity extends Activity {
 					}
 				});
 
-		mLoginFormView = findViewById(R.id.login_form);
-		mLoginStatusView = findViewById(R.id.login_status);
-		mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
+		
 
 		findViewById(R.id.sign_in_button).setOnClickListener(
 				new View.OnClickListener() {
@@ -224,24 +228,18 @@ public class LoginActivity extends Activity {
 	}
 
 	/**
-	 * Represents an asynchronous login/registration task used to authenticate
-	 * the user.
+	 * Represents an asynchronous login task used to authenticate the user.
 	 */
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			// TODO: attempt authentication against a network service.
-
-			return true;
-
-			/*
-			 * for (String credential : DUMMY_CREDENTIALS) { String[] pieces =
-			 * credential.split(":"); if (pieces[0].equals(mEmail)) { // Account
-			 * exists, return true if the password matches. return
-			 * pieces[1].equals(mPassword); } }
-			 */
-
-			// TODO: register the new account here.
+			// attempt authentication against a network service.
+			String token = RestClient.login(mEmail, mPassword);
+			if (token != null) {
+				prefsUtil.update(TOKEN, token);
+				return true;
+			} else
+				return false;
 
 		}
 
@@ -267,8 +265,43 @@ public class LoginActivity extends Activity {
 		}
 	}
 
+	/**
+	 * Represents an asynchronous login task used to authenticate the user.
+	 */
+	public class TokenCheckTask extends AsyncTask<String, Void, String> {
+
+		@Override
+		protected void onPostExecute(final String result) {
+			mAuthTask = null;
+			showProgress(false);
+
+			if (result != null) {
+				userName = result;
+				openMain();
+				finish();
+			} else {
+				mPasswordView
+						.setError(getString(R.string.error_incorrect_password));
+				mPasswordView.requestFocus();
+			}
+		}
+
+		@Override
+		protected void onCancelled() {
+			mAuthTask = null;
+			showProgress(false);
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+
+			return RestClient.checkToken(params[0]);
+		}
+	}
+
 	public void openMain() {
 		Intent intent = new Intent(this, MainActivity.class);
+		intent.putExtra("username", userName);
 		startActivity(intent);
 	}
 }

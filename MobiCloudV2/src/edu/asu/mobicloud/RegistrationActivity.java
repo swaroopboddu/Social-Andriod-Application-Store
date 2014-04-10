@@ -1,5 +1,6 @@
 package edu.asu.mobicloud;
 
+import edu.asu.mobicloud.retrofit.RestClient;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -25,6 +26,7 @@ public class RegistrationActivity extends Activity {
 	private UserRegistrationTask mUserRegistrationTask;
 	private View mRegistrationStatusView;
 	private View mRegistrationFormView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class RegistrationActivity extends Activity {
 		mMobileNumberView = (EditText) findViewById(R.id.contact);
 		mRegistrationStatusView = findViewById(R.id.registration_status);
 		mRegistrationFormView = findViewById(R.id.registration_form);
-		mRegistrationStatusMessageView = (TextView)findViewById(R.id.registration_status_message);
+		mRegistrationStatusMessageView = (TextView) findViewById(R.id.registration_status_message);
 		findViewById(R.id.signUp).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
@@ -45,7 +47,7 @@ public class RegistrationActivity extends Activity {
 						attemptRegister();
 					}
 				});
-		
+
 	}
 
 	protected void attemptRegister() {
@@ -56,50 +58,39 @@ public class RegistrationActivity extends Activity {
 		String mobile = mMobileNumberView.getText().toString();
 		String dob = mMobileNumberView.getText().toString();
 		View focusView = null;
-		boolean cancel =false;
-		if(TextUtils.isEmpty(email))
-		{
+		boolean cancel = false;
+		if (TextUtils.isEmpty(email)) {
 			mEmailView.setError(getString(R.string.error_field_required));
 			focusView = mEmailView;
 			cancel = true;
-		}
-		else if (!email.contains("@")) {
+		} else if (!email.contains("@")) {
 			mEmailView.setError(getString(R.string.error_invalid_email));
 			focusView = mEmailView;
 			cancel = true;
-		}
-		else if(TextUtils.isEmpty(password))
-		{
+		} else if (TextUtils.isEmpty(password)) {
 			mPasswordView.setError(getString(R.string.error_field_required));
 			focusView = mPasswordView;
 			cancel = true;
-		}
-		else if(TextUtils.isEmpty(confirmPassword))
-		{
-			mConfirmPasswordView.setError(getString(R.string.error_field_required));
+		} else if (TextUtils.isEmpty(confirmPassword)) {
+			mConfirmPasswordView
+					.setError(getString(R.string.error_field_required));
 			focusView = mConfirmPasswordView;
 			cancel = true;
-		}
-		else if(confirmPassword.equals(password))
-		{
-			mConfirmPasswordView.setError(getString(R.string.error_field_required));
+		} else if (confirmPassword.equals(password)) {
+			mConfirmPasswordView
+					.setError(getString(R.string.error_field_required));
 			focusView = mConfirmPasswordView;
 			cancel = true;
-		}
-		else if(TextUtils.isEmpty(name))
-		{
+		} else if (TextUtils.isEmpty(name)) {
 			mNameView.setError(getString(R.string.error_field_required));
 			focusView = mNameView;
 			cancel = true;
-		}
-		else if(TextUtils.isEmpty(mobile))
-		{
-			mMobileNumberView.setError(getString(R.string.error_field_required));
+		} else if (TextUtils.isEmpty(mobile)) {
+			mMobileNumberView
+					.setError(getString(R.string.error_field_required));
 			focusView = mMobileNumberView;
 			cancel = true;
-		}
-		else if(TextUtils.isEmpty(dob))
-		{
+		} else if (TextUtils.isEmpty(dob)) {
 			mDateOfBirthView.setError(getString(R.string.error_field_required));
 			focusView = mDateOfBirthView;
 			cancel = true;
@@ -111,14 +102,15 @@ public class RegistrationActivity extends Activity {
 		} else {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
-			mRegistrationStatusMessageView.setText(R.string.registrationProgress);
+			mRegistrationStatusMessageView
+					.setText(R.string.registrationProgress);
 			showProgress(true);
 			mUserRegistrationTask = new UserRegistrationTask();
 			mUserRegistrationTask.execute((Void) null);
 		}
-		
-		
+
 	}
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 	private void showProgress(final boolean show) {
 		// On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -134,8 +126,9 @@ public class RegistrationActivity extends Activity {
 					.setListener(new AnimatorListenerAdapter() {
 						@Override
 						public void onAnimationEnd(Animator animation) {
-							mRegistrationStatusView.setVisibility(show ? View.VISIBLE
-									: View.GONE);
+							mRegistrationStatusView
+									.setVisibility(show ? View.VISIBLE
+											: View.GONE);
 						}
 					});
 
@@ -145,24 +138,28 @@ public class RegistrationActivity extends Activity {
 					.setListener(new AnimatorListenerAdapter() {
 						@Override
 						public void onAnimationEnd(Animator animation) {
-							mRegistrationFormView.setVisibility(show ? View.GONE
-									: View.VISIBLE);
+							mRegistrationFormView
+									.setVisibility(show ? View.GONE
+											: View.VISIBLE);
 						}
 					});
 		} else {
 			// The ViewPropertyAnimator APIs are not available, so simply show
 			// and hide the relevant UI components.
-			mRegistrationStatusView.setVisibility(show ? View.VISIBLE : View.GONE);
-			mRegistrationFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+			mRegistrationStatusView.setVisibility(show ? View.VISIBLE
+					: View.GONE);
+			mRegistrationFormView
+					.setVisibility(show ? View.GONE : View.VISIBLE);
 		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.registration, menu);
 		return true;
 	}
-	
+
 	/**
 	 * Represents an asynchronous login/registration task used to authenticate
 	 * the user.
@@ -170,15 +167,16 @@ public class RegistrationActivity extends Activity {
 	public class UserRegistrationTask extends AsyncTask<Void, Void, Boolean> {
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			// TODO: attempt authentication against a network service.
 
-			try {
-				// Simulate network access.
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
+			String s = RestClient.register(mNameView.getText().toString(),
+					mNameView.getText().toString(), mEmailView.getText()
+							.toString(), mPasswordView.getText().toString(),
+					mMobileNumberView.getText().toString());
+			if (s != null)
+				return true;
+			else
 				return false;
-			}
-			return true;
+
 		}
 
 		@Override

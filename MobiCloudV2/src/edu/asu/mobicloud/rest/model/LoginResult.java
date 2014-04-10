@@ -3,11 +3,16 @@ package edu.asu.mobicloud.rest.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class LoginResult implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -875835892027124478L;
+	@Expose
+	@SerializedName("User")
 	User user;
 	List<Application> apps;
 	List<User> friends;

@@ -1,6 +1,7 @@
 package edu.asu.mobicloud;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -21,11 +22,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import edu.asu.mobicloud.adapters.ListAdapter;
 import edu.asu.mobicloud.fragments.CommentDialogFragment;
-import edu.asu.mobicloud.model.Application;
+import edu.asu.mobicloud.model.ListData;
+import edu.asu.mobicloud.rest.model.ApplicationCapsule;
 
 public class DetailsActivity extends ListActivity {
 	private RatingBar editRating;
-	private Application application;
+	private ApplicationCapsule applicationCap;
 	Button b;
 
 	@Override
@@ -35,28 +37,31 @@ public class DetailsActivity extends ListActivity {
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
-			application = extras.getParcelable("application");
-			System.out.println("Application ID:" + application.getId());
+			applicationCap = extras.getParcelable("application");
+			System.out.println("Application ID:"
+					+ applicationCap.getApplication().getTitle());
 		}
 		TextView appName = (TextView) findViewById(R.id.tvAppName);
-		appName.setText(application.getName());
+		appName.setText(applicationCap.getApplication().getTitle());
 		TextView devName = (TextView) findViewById(R.id.tvDevName);
-		devName.setText(application.getDeveloper());
+		devName.setText(applicationCap.getUser().getFirstName()
+				+ applicationCap.getUser().getLastName());
 		Resources res = getResources();
-		String downloads = res.getQuantityString(R.plurals.downloads,
-				application.getDownloads(), application.getDownloads());
+		// TODO swaroop when downloads count added to server
+		String downloads = res.getQuantityString(R.plurals.downloads, 0, 0);
 
 		TextView downloadCount = (TextView) findViewById(R.id.tvDownloadCt);
 		downloadCount.setText(downloads);
 
 		TextView description = (TextView) findViewById(R.id.description);
-		description.setText(application.getDescription());
+		description.setText(applicationCap.getApplication().getDescription());
 
 		RatingBar r = (RatingBar) findViewById(R.id.pop_ratingbar);
-		r.setRating(application.getRating());
+		r.setRating(Float.parseFloat(applicationCap.getApplication()
+				.getRating()));
 
 		ListAdapter adapter = new ListAdapter(getApplicationContext(),
-				application.getComments());
+				new ArrayList<ListData>());
 		b = (Button) findViewById(R.id.btnDownload);
 
 		b.setOnClickListener(new View.OnClickListener() {

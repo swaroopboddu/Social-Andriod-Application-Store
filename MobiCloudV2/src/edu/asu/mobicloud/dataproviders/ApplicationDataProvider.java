@@ -5,17 +5,22 @@ package edu.asu.mobicloud.dataproviders;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+
+import android.os.AsyncTask;
 
 import edu.asu.mobicloud.model.Application;
 import edu.asu.mobicloud.model.Comment;
-import edu.asu.mobicloud.model.User;
+import edu.asu.mobicloud.rest.model.ApplicationCapsule;
+import edu.asu.mobicloud.retrofit.RestClient;
 
 /**
  * @author satyaswaroop
  * 
  */
-public class ApplicationDataProvider {
+public class ApplicationDataProvider extends Observable {
 	private static ApplicationDataProvider appProvider;
+	private List<ApplicationCapsule> list=new ArrayList<ApplicationCapsule>();
 
 	private ApplicationDataProvider() {
 
@@ -55,6 +60,42 @@ public class ApplicationDataProvider {
 			list.add(a);
 		}
 		return list;
+	}
+
+	/**
+	 * This method is used to get all the installed applications.
+	 * 
+	 * @param tokenId
+	 * @return
+	 */
+	public List<ApplicationCapsule> getInstalledApps(String tokenId) {
+		new LongOperation().execute(tokenId);
+		return list;
+	}
+
+	private class LongOperation extends
+			AsyncTask<String, Void, List<ApplicationCapsule>> {
+
+		@Override
+		protected List<ApplicationCapsule> doInBackground(String... params) {
+			return RestClient.getApplications(params[0]).getApplications();
+
+		}
+
+		@Override
+		protected void onPostExecute(List<ApplicationCapsule> result) {
+			list = result;
+			setChanged();
+			notifyObservers(list);
+		}
+
+		@Override
+		protected void onPreExecute() {
+		}
+
+		@Override
+		protected void onProgressUpdate(Void... values) {
+		}
 	}
 
 }
