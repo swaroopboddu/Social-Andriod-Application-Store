@@ -17,6 +17,12 @@ class ApplicationsController extends AppController {
 	public $components = array('Paginator', 'Session');
 	public $uses = array('Application', 'ApplicationRevision');
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		//$this->Auth->allow('add');
+		$this->Auth->allow('download_app');
+}
+
 /**
  * index method
  *
@@ -198,12 +204,39 @@ class ApplicationsController extends AppController {
 	public function download_app($id = null) {
 		$this->Application->recursive = -1;
 		if($id != null) {
-			$app = $this->Application->find('first', array('conditions'=>array('Application.id' => $id)));
-			$name = $this->ApplicationRevision->find('first', 
-									array('conditions' => array('ApplicationRevision.app_id' => $id),
-											'order' => array('ApplicationRevision.id' => 'desc')));
-			$this->response->file($app['Application']['path'], array('download' => true, 'name' => $name['ApplicationRevision']['filename']));
-			return $this->response;
+			$headers = apache_request_headers();
+			if(isset($headers['token']) && isset($this->request->params['ext'])) {
+				if($this->request->params['ext'] == "json") {
+					$token = $headers['token'];
+					$conditions = array(
+						'User.token' => $token
+					);
+					if($this->User->hasAny($conditions)) {
+						$app = $this->Application->find('first', array('conditions'=>array('Application.id' => $id)));
+						$name = $this->ApplicationRevision->find('first', 
+											array('conditions' => array('ApplicationRevision.app_id' => $id),
+													'order' => array('ApplicationRevision.id' => 'desc')));
+						$this->response->file($app['Application']['path'], array('download' => true, 'name' => $name['ApplicationRevision']['filename']));
+					} else {
+						$result = "Invalid Token";
+						$this->set('_serialize',array($result));
+					}
+				}
+			} else {
+				//Check if the user is logged in 
+				if($this->Session->check('User.id')){
+				//If there is a session set
+					$app = $this->Application->find('first', array('conditions'=>array('Application.id' => $id)));
+					$name = $this->ApplicationRevision->find('first', 
+											array('conditions' => array('ApplicationRevision.app_id' => $id),
+													'order' => array('ApplicationRevision.id' => 'desc')));
+					$this->response->file($app['Application']['path'], array('download' => true, 'name' => $name['ApplicationRevision']['filename']));
+					return $this->response;
+				} else {
+					$this->Session->setFlash("You need to login to download the applicaiton");
+					$this->redirect($this->Auth->redirectUrl(array('controller' => 'users' , 'action' => 'login' )));
+				}
+			}
 		}
 	}
 }

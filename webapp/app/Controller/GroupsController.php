@@ -17,30 +17,32 @@ class GroupsController extends AppController {
 	public $components = array('Paginator', 'Session');
 	public $uses = array('Group','User','GroupsUser');
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		//$this->Auth->allow('add');
+		$this->Auth->allow('add');
+}
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		//pr($this->request->params);
-		//exit(1);
-		//if(isset($this->request->params['pass'][0])){
-			//if($this->request->params['pass'][0]){
 		$headers = apache_request_headers();
 		if(isset($headers['token'])) {
 			$token = $headers['token'];
-				$id = $this->User->find('first', array(
+				$user = $this->User->find('first', array(
 					'conditions' => array('User.token' => $token),
 					'fields' => array('User.id'),
 					'recursive' => 0));
 				$groups = $this->GroupsUser->find('all', array(
-					'conditions' => array('GroupsUser.user_id' => $id['User']['id'])));
+					'conditions' => array('GroupsUser.user_id' => $user['User']['id'])));
 				pr($groups);
 				$this->set('groups', $groups);
 				$this->set('_serialize', array('groups'));
 		} else {
-			$this->Group->recursive = -1;
+			//$this->Group->recursive = -1;
 			//$group = $this->Group->find('all', array('order' => array('Group.id' => 'desc')));
  			$this->set('groups', $this->Paginator->paginate());
  			//$this->set('groups', $group);
@@ -72,25 +74,47 @@ class GroupsController extends AppController {
 		if ($this->request->is('post')) {
 			$headers = apache_request_headers();
 			if(isset($headers['token'])) {
+				$token = $headers['token'];
 				$user = $this->User->find('first', array(
 					'conditions' => array('User.token' => $token),
 					'recursive' => 0));
-			$this->request->data['user_id'] = $id['User']['id'];
-			$this->Group->create();
-			if ($this->Group->save($this->request->data)) {
-			// 	$this->Session->setFlash(__('The group has been saved.'));
-			// 	return $this->redirect(array('action' => 'index'));
-			 	$lastInsert = $this->Group->getLastInsertID();
-			 	$result = $this->Group->find('first', array('conditions' => array('Group.id' => $lastInsert)));
-			 	$this->set('result', $result);
-				$this->set('_serialize',array('result'));
-			 } } else {
-				$result = "Failure";
-			 	$this->set('result', $result);
-				$this->set('_serialize',array('result'));
+				if(isset($user['User'])) {
+					pr($user);
+					$this->request->data['Group']['user_id'] = $user['User']['id'];
+					$this->request->data['Group']['created_on'] = date('Y-m-d H:i:s');
+					pr($this->request->data);
+					$this->Group->create();
+					if ($this->Group->save($this->request->data)) {
+					 	$lastInsert = $this->Group->getLastInsertID();
+					 	//To save the user also as one of the mems of group
+					 	$group_user = array();
+					 	$group_user['group_id'] = $lastInsert;
+					 	$group_user['user_id'] = $user['User']['id'];
+					 	$group_user['status'] = "pending";
+					 	$group_user['added_on'] = date('Y-m-d H:i:s');
+					 	$this->Group->create();
+					 	$this->GroupsUser->save($group_user);
+
+					 	//Result containing only the created group data
+					 	
+					 	$result = $this->Group->find('first', array(
+					 		'conditions' => array('Group.id' => $lastInsert)));
+					 	$this->set('result', $result);
+						$this->set('_serialize',array('result'));
+			 		} else {
+			 			$result = "Unable to create group";
+			 			$this->set('result', $result);
+						$this->set('_serialize',array('result'));
+			 		}
+				} else {
+					$result = "Invalid token - No such user";
+					return $this->redirect(array('action' => 'index.json'));
+				}
+			} else {
+				$result = "Token ID required";
+				return $this->redirect(array('action' => 'index.json'));
 			}
 		}
-		return $this->redirect(array('action' => 'index.json'));
 	}
 
 /**
