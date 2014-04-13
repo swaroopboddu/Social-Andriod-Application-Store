@@ -1,11 +1,13 @@
 package edu.asu.mobicloud.retrofit;
 
+import retrofit.Callback;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.POST;
 import edu.asu.mobicloud.rest.model.ApplicationsList;
+import edu.asu.mobicloud.rest.model.GroupsList;
 import edu.asu.mobicloud.rest.model.Result;
 
 interface MobiCloud {
@@ -22,7 +24,25 @@ interface MobiCloud {
 			@Field("data[User][password]") String password,
 			@Field("data[User][password_confirmation]") String confirmation,
 			@Field("data[User][phone]") String phone);
-	
+
 	@GET("/applications.json")
 	ApplicationsList getApplications(@Header("token") String token);
+	
+	@GET("/groups.json")
+	ApplicationsList getGroups(@Header("token") String token);
+	
+	@GET("/friends.json")
+	ApplicationsList getFriends(@Header("token") String token);
+	
+	@GET("/search.json")
+	ApplicationsList search(@Header("token") String token, @Field("data[search]")String search);
+	
+	
+
+	@FormUrlEncoded
+	@POST("/groups/add.json")
+	GroupsList createGroup(@Header("token") String token,
+			@Field("data[Group][name]") String name,
+			@Field("data[Group][description]") String description, Callback<GroupsList> callback);
+
 }

@@ -2,15 +2,19 @@ package edu.asu.mobicloud.retrofit;
 
 import java.util.concurrent.TimeUnit;
 
+import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RestAdapter.LogLevel;
 import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.OkClient;
+import retrofit.client.Response;
 
 import com.squareup.okhttp.OkHttpClient;
 
+import edu.asu.mobicloud.dataproviders.GroupDataProvider;
 import edu.asu.mobicloud.rest.model.ApplicationsList;
+import edu.asu.mobicloud.rest.model.GroupsList;
 import edu.asu.mobicloud.rest.model.Result;
 
 public class RestClient {
@@ -73,6 +77,33 @@ public class RestClient {
 			}
 		}
 		return null;
+	}
+
+	public static void createGroups(String token, String title,
+			String description) {
+		
+		if (token != null) {
+			System.out.println("In create Group:" + token);
+			MobiCloud cloud = restAdapter.create(MobiCloud.class);
+			Callback<GroupsList> callback = new Callback<GroupsList>() {
+
+				@Override
+				public void success(GroupsList arg0, Response arg1) {
+					GroupDataProvider.getInstance().onUpdateCallback(arg0.getGroups());
+				}
+
+				@Override
+				public void failure(RetrofitError arg0) {
+
+				}
+			};
+			try {
+				cloud.createGroup(token, title, description, callback);
+			} catch (RetrofitError e) {
+				System.out.println(e.getResponse().getStatus());
+			}
+		}
+
 	}
 
 }
