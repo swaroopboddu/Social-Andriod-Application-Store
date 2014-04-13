@@ -38,7 +38,7 @@ public class MobiListFragment extends ListFragment implements Observer {
 	FriendsDataProvider fProvider = FriendsDataProvider.getInstance();
 	GroupDataProvider groupProvider = GroupDataProvider.getInstance();
 	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
-	private static final String TAG = "edu.asu.mobicloud.LoginActivity";
+	public static final String TAG = "edu.asu.mobicloud.LoginActivity";
 	PreferencesUtil prefUtil;
 
 	public MobiListFragment() {
