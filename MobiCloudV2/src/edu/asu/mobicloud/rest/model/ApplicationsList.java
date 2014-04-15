@@ -12,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
  * 
  */
 public class ApplicationsList {
-	@SerializedName("applications")
+	@SerializedName("result")
 	private List<ApplicationCapsule> applications;
 
 	public List<ApplicationCapsule> getApplications() {

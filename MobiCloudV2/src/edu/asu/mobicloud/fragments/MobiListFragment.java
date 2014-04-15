@@ -1,6 +1,5 @@
 package edu.asu.mobicloud.fragments;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
@@ -17,6 +16,7 @@ import android.widget.ListView;
 import edu.asu.mobicloud.DetailsActivity;
 import edu.asu.mobicloud.DeveloperDetailsActivity;
 import edu.asu.mobicloud.GroupDetailsActivity;
+import edu.asu.mobicloud.LoginActivity;
 import edu.asu.mobicloud.UserDetailsActivity;
 import edu.asu.mobicloud.adapters.ListAdapter;
 import edu.asu.mobicloud.dataproviders.ApplicationDataProvider;
@@ -25,14 +25,15 @@ import edu.asu.mobicloud.dataproviders.FriendsDataProvider;
 import edu.asu.mobicloud.dataproviders.GroupDataProvider;
 import edu.asu.mobicloud.interfaces.ListFragmentDataProvider;
 import edu.asu.mobicloud.model.ListData;
-import edu.asu.mobicloud.rest.model.ApplicationCapsule;
 import edu.asu.mobicloud.util.PreferencesUtil;
 
 public class MobiListFragment extends ListFragment implements Observer {
 	ListAdapter adapter;
 	ListFragmentDataProvider provider;
-	List<? extends ListData> data = null;
-	List<ApplicationCapsule> data2 = null;
+	List<? extends ListData> friends = null;
+	List<? extends ListData> applications = null;
+	List<? extends ListData> developers = null;
+	List<? extends ListData> groups = null;
 	ApplicationDataProvider appProvider = ApplicationDataProvider.getInstance();
 	DeveloperDataProvider devProvider = DeveloperDataProvider.getInstance();
 	FriendsDataProvider fProvider = FriendsDataProvider.getInstance();
@@ -45,16 +46,11 @@ public class MobiListFragment extends ListFragment implements Observer {
 
 		super();
 		appProvider.addObserver(this);
-		// TODO Auto-generated constructor stub
+		devProvider.addObserver(this);
+		fProvider.addObserver(this);
+		groupProvider.addObserver(this);
 	}
 
-	/*
-	 * static ListData[] numbers_text = new ListData[10]; static int i = 0;
-	 * static { for (int i = 0; i < 10; i++) { numbers_text[i] = new ListData();
-	 * numbers_text[i].setImageUri(""); numbers_text[i].setData("" + i);
-	 * 
-	 * } }
-	 */
 	@Override
 	public void onAttach(Activity activity) {
 		provider = (ListFragmentDataProvider) activity;
@@ -67,24 +63,40 @@ public class MobiListFragment extends ListFragment implements Observer {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		String tag = this.getTag();
-		if (tag.equalsIgnoreCase("apps")) {
+		if (tag.equalsIgnoreCase("exploreapps")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					DetailsActivity.class);
-			intent.putExtra("application", (Parcelable) data2.get((int) id));
+			intent.putExtra("application",
+					(Parcelable) applications.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		}
+		if (tag.equalsIgnoreCase("myapps")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					DetailsActivity.class);
+			intent.putExtra("application",
+					(Parcelable) applications.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		}
+		if (tag.equalsIgnoreCase("users")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					UserDetailsActivity.class);
+			intent.putExtra("name", (Parcelable) friends.get((int) id));
 			this.getActivity().startActivity(intent);
 
 		}
 		if (tag.equalsIgnoreCase("friends")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					UserDetailsActivity.class);
-			intent.putExtra("name", data.get((int) id).getData());
+			intent.putExtra("name", (Parcelable) friends.get((int) id));
 			this.getActivity().startActivity(intent);
 
 		}
 		if (tag.equalsIgnoreCase("developers")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					DeveloperDetailsActivity.class);
-			intent.putExtra("name", data.get((int) id).getData());
+			intent.putExtra("name", (Parcelable) developers.get((int) id));
 			this.getActivity().startActivity(intent);
 
 		}
@@ -92,7 +104,14 @@ public class MobiListFragment extends ListFragment implements Observer {
 		if (tag.equalsIgnoreCase("groups")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					GroupDetailsActivity.class);
-			intent.putExtra("name", (Parcelable) data.get((int) id));
+			intent.putExtra("name", (Parcelable) groups.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		}
+		if (tag.equalsIgnoreCase("exgroups")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					GroupDetailsActivity.class);
+			intent.putExtra("name", (Parcelable) groups.get((int) id));
 			this.getActivity().startActivity(intent);
 
 		}
@@ -103,26 +122,42 @@ public class MobiListFragment extends ListFragment implements Observer {
 			Bundle savedInstanceState) {
 
 		String tag = this.getTag();
-		if (tag.equalsIgnoreCase("apps")) {
-			// data =
-			// appProvider.getApps(provider.getData().getString("user_id"));
-			data2 = appProvider.getInstalledApps(prefUtil.getPreference(TOKEN));
-			adapter = new ListAdapter(inflater.getContext(), data2);
+		if (tag.equalsIgnoreCase("myapps")) {
+			applications = appProvider.getInstalledApps(prefUtil
+					.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), applications);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("exploreapps")) {
+			applications = appProvider.getApps();
+			adapter = new ListAdapter(inflater.getContext(), applications);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("users")) {
+			friends = (List<? extends ListData>) fProvider
+					.getPublicList(prefUtil.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), friends);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("friends")) {
-			data = fProvider
-					.getFriends(provider.getData().getString("user_id"));
-			adapter = new ListAdapter(inflater.getContext(), data);
+			friends = (List<? extends ListData>) fProvider.getList(prefUtil
+					.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), friends);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("developers")) {
-			data = devProvider.getDevelopers(provider.getData().getString(
-					"user_id"));
-			adapter = new ListAdapter(inflater.getContext(), data);
+			developers = devProvider.getDeveloperList(prefUtil
+					.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), developers);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("alldevelopers")) {
+			developers = devProvider.getPublicList(prefUtil
+					.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), developers);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("groups")) {
-			data = groupProvider.getGroups(provider.getData().getString(
-					"user_id"));
-			adapter = new ListAdapter(inflater.getContext(), data);
+			groups = groupProvider.getList(prefUtil.getPreference(TOKEN));
+			adapter = new ListAdapter(inflater.getContext(), groups);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("exgroups")) {
+			groups = groupProvider.getPublicList();
+			adapter = new ListAdapter(inflater.getContext(), groups);
 			setListAdapter(adapter);
 		}
 
@@ -131,13 +166,12 @@ public class MobiListFragment extends ListFragment implements Observer {
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		if (data2 != null) {
-			data2.clear();
-			ArrayList<ApplicationCapsule> temp = (ArrayList<ApplicationCapsule>) arg1;
-			for (ApplicationCapsule app : temp) {
-				data2.add(app);
-			}
+		if (arg1 instanceof String && arg1.equals("Login Fail")) {
+			PreferencesUtil.removeToken(getActivity());
+			Intent intentLogin = new Intent(
+					this.getActivity().getBaseContext(), LoginActivity.class);
+			startActivity(intentLogin);
+			this.getActivity().finish();
 		}
 		if (adapter != null) {
 			adapter.notifyDataSetChanged();

@@ -1,6 +1,5 @@
 package edu.asu.mobicloud;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -11,6 +10,7 @@ import java.util.ArrayList;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -46,21 +47,21 @@ public class DetailsActivity extends ListActivity {
 	private String packageName;
 	private String path;
 	private final String prefsName = "edu.asu.mobicloud.applications";
-	private final String url = "http://androidgeekvm.vlab.asu.edu/webapp/application/download_app/";
+	// TODO: to be moved to more generic place
+	private final String url = "http://androidgeekvm.vlab.asu.edu/webapp/applications/download_app/";
 	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
 
 	private static final String TOKENPREF = "edu.asu.mobicloud.LoginActivity";
-	private PreferencesUtil tokenUtil = new PreferencesUtil(
-			getApplicationContext(), TOKENPREF);
-	private PreferencesUtil prefsUtil = new PreferencesUtil(
-			getApplicationContext(), prefsName);
+	private PreferencesUtil tokenUtil;
+	private PreferencesUtil prefsUtil;
 	private ProgressBar bar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_details);
-
+		tokenUtil = new PreferencesUtil(getApplicationContext(), TOKENPREF);
+		prefsUtil = new PreferencesUtil(getApplicationContext(), prefsName);
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			applicationCap = extras.getParcelable("application");
@@ -105,8 +106,10 @@ public class DetailsActivity extends ListActivity {
 					isInstallClicked = true;
 
 				} else if (b.getText().equals("Download")) {
-					new DownloadFileFromURL().execute(url
-							+ applicationCap.getApplication().getId());
+					new DownloadFileFromURL()
+							.execute(url
+									+ applicationCap.getApplication().getId()
+									+ ".json");
 
 				}
 
@@ -163,7 +166,19 @@ public class DetailsActivity extends ListActivity {
 			prefsUtil.update(applicationCap.getApplication().getId(),
 					packageName);
 			Toast.makeText(this, "App installed", Toast.LENGTH_SHORT).show();
+			b.setText("UnInstall");
 		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -175,8 +190,13 @@ public class DetailsActivity extends ListActivity {
 
 	private void promptInstall() {
 		if (path != null) {
-			packageName = getApplicationContext().getPackageManager()
-					.getInstallerPackageName(path);
+			/*
+			 * packageName = getApplicationContext().getPackageManager()
+			 * .getInstallerPackageName(path);
+			 */
+			PackageInfo inf = getApplicationContext().getPackageManager()
+					.getPackageArchiveInfo(path, 0);
+			packageName = inf.applicationInfo.packageName;
 			Intent promptInstall = new Intent(Intent.ACTION_VIEW)
 					.setDataAndType(Uri.fromFile(new File(path)),
 							"application/vnd.android.package-archive");
@@ -224,25 +244,40 @@ public class DetailsActivity extends ListActivity {
 		@Override
 		protected String doInBackground(String... f_url) {
 			int count;
+			String fileName = null;
 			try {
 				OkHttpClient client = new OkHttpClient();
 				URL url = new URL(f_url[0]);
 				HttpURLConnection connection = client.open(url);
 				connection.setRequestProperty("token",
 						tokenUtil.getPreference(TOKEN));
+				Log.v("Token", tokenUtil.getPreference(TOKEN));
 				connection.setRequestMethod("GET");
+				connection.setDoOutput(true);
+
+				connection.connect();
+				fileName = connection.getHeaderField("Content-Disposition");
+				fileName = fileName.split("=")[1].split("\"")[1];
 				OutputStream output = new FileOutputStream(Environment
 						.getExternalStorageDirectory().toString()
-						+ "/downloadedfile.apk");
-
+						+ File.separator
+						+ "Download"
+						+ File.separator
+						+ fileName + ".apk");
+				Log.v("Path", "PATH: "
+						+ Environment.getExternalStorageDirectory().toString()
+						+ File.separator + "Download" + File.separator
+						+ fileName + ".apk");
 				int lenghtOfFile = connection.getContentLength();
-				InputStream input = new BufferedInputStream(url.openStream(),
-						8192);
+
+				InputStream input = connection.getInputStream();
 
 				byte data[] = new byte[1024];
 				long total = 0;
+				Log.d("DetailsTag", "" + lenghtOfFile);
 				while ((count = input.read(data)) != -1) {
 					total += count;
+					Log.d("DetailsTag", "" + total);
 					publishProgress("" + (int) ((total * 100) / lenghtOfFile));
 					output.write(data, 0, count);
 				}
@@ -253,8 +288,7 @@ public class DetailsActivity extends ListActivity {
 			} catch (Exception e) {
 				Log.e("Error: ", e.getMessage());
 			}
-
-			return null;
+			return fileName;
 		}
 
 		/**
@@ -268,10 +302,11 @@ public class DetailsActivity extends ListActivity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		@Override
-		protected void onPostExecute(String file_url) {
+		protected void onPostExecute(String filename) {
 
 			path = Environment.getExternalStorageDirectory().toString()
-					+ "/downloadedfile.apk";
+					+ File.separator + "Download" + File.separator + filename
+					+ ".apk";
 			b.setText("Install");
 
 		}

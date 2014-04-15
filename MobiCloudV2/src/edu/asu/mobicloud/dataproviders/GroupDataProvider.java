@@ -4,12 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import edu.asu.mobicloud.model.Group;
-import edu.asu.mobicloud.model.User;
+import edu.asu.mobicloud.retrofit.RestClient;
 
 public class GroupDataProvider extends Observable {
 	private static GroupDataProvider grpInstance;
-	private List<edu.asu.mobicloud.rest.model.Group> list = new ArrayList<edu.asu.mobicloud.rest.model.Group>();
+	private List<edu.asu.mobicloud.rest.model.GroupCapsule> list = new ArrayList<edu.asu.mobicloud.rest.model.GroupCapsule>();
+	private List<edu.asu.mobicloud.rest.model.GroupCapsule> publicList = new ArrayList<edu.asu.mobicloud.rest.model.GroupCapsule>();
+
+	public List<edu.asu.mobicloud.rest.model.GroupCapsule> getPublicList() {
+		RestClient.getGroups();
+		return publicList;
+	}
+
+	private void setPublicList(
+			List<edu.asu.mobicloud.rest.model.GroupCapsule> publicList) {
+		this.publicList.clear();
+		this.publicList.addAll(publicList);
+	}
 
 	public static GroupDataProvider getGrpInstance() {
 		return grpInstance;
@@ -19,13 +30,14 @@ public class GroupDataProvider extends Observable {
 		GroupDataProvider.grpInstance = grpInstance;
 	}
 
-	public List<edu.asu.mobicloud.rest.model.Group> getList() {
+	public List<edu.asu.mobicloud.rest.model.GroupCapsule> getList(String token) {
+		RestClient.getGroups(token);
 		return list;
 	}
 
-	private void setList(List<edu.asu.mobicloud.rest.model.Group> list) {
+	private void setList(List<edu.asu.mobicloud.rest.model.GroupCapsule> list) {
 		this.list.clear();
-		list.addAll(list);
+		this.list.addAll(list);
 	}
 
 	private GroupDataProvider() {
@@ -39,29 +51,34 @@ public class GroupDataProvider extends Observable {
 		return grpInstance;
 	}
 
-	public List<Group> getGroups(String userId) {
-		User u = new User();
-		u.setUserName("swaroop");
-		u.setImageUrl("");
-		List<User> l = new ArrayList<User>();
-		l.add(u);
-		List<Group> list = new ArrayList<Group>();
-		for (int i = 0; i < 10; i++) {
-			Group g = new Group();
-			g.setTitle("Hello Group" + i);
-			g.setId("" + i);
-			g.setDiscription("Hello");
-			g.setMembers(l);
-			list.add(g);
+	public void onUpdateCallback(
+			List<edu.asu.mobicloud.rest.model.GroupCapsule> list) {
+		if (list != null && !list.isEmpty()) {
+			setList(list);
+			setChanged();
+			notifyObservers();
 		}
-		return list;
+
 	}
 
-	public void onUpdateCallback(List<edu.asu.mobicloud.rest.model.Group> list) {
-		setList(list);
-		setChanged();
-		notifyObservers(list);
+	public void onUpdatePublicCallback(
+			List<edu.asu.mobicloud.rest.model.GroupCapsule> list) {
+		if (list != null && !list.isEmpty()) {
+			setPublicList(list);
+			setChanged();
+			notifyObservers();
+		}
 
+	}
+
+	public void onUpdateCallback() {
+		setChanged();
+		notifyObservers();
+	}
+
+	public void onFailure() {
+		setChanged();
+		notifyObservers("Login Fail");
 	}
 
 }

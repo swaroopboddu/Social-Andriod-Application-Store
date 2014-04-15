@@ -5,17 +5,26 @@ package edu.asu.mobicloud.dataproviders;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-import edu.asu.mobicloud.model.Group;
-import edu.asu.mobicloud.model.User;
+import edu.asu.mobicloud.rest.model.User;
+import edu.asu.mobicloud.retrofit.RestClient;
 
 /**
  * @author satyaswaroop
  * 
  */
-public class FriendsDataProvider {
+public class FriendsDataProvider extends Observable {
 
 	private static FriendsDataProvider fProvider;
+	private List<User> list = new ArrayList<User>();
+	private List<User> publicList = new ArrayList<User>();
+
+	private void setPublicList(List<User> publicList) {
+
+		this.publicList.clear();
+		this.publicList.addAll(publicList);
+	}
 
 	private FriendsDataProvider() {
 
@@ -29,19 +38,35 @@ public class FriendsDataProvider {
 		return fProvider;
 	}
 
-	public List<User> getFriends(String userId) {
-		List<User> list = new ArrayList<User>();
-
-		for (int i = 0; i < 10; i++) {
-			User a = new User();
-			a.setUserName("swaroop");
-			a.setFriends(list);
-			a.setGroups(new ArrayList<Group>());
-			a.setImageUrl("");
-			a.setApps(ApplicationDataProvider.getInstance().getApps(""));
-			list.add(a);
+	public void onUpdateCallback(List<User> list) {
+		if (list != null && !list.isEmpty()) {
+			setList(list);
+			setChanged();
+			notifyObservers(this.list);
 		}
+	}
+
+	public void onUpdatePublicCallback(List<User> list) {
+		if (list != null && !list.isEmpty()) {
+			setPublicList(list);
+			setChanged();
+			notifyObservers(this.list);
+		}
+	}
+
+	public List<User> getList(String token) {
+		RestClient.getFriends(token);
 		return list;
+	}
+
+	private void setList(List<User> list) {
+		this.list.clear();
+		this.list.addAll(list);
+	}
+
+	public List<User> getPublicList(String token) {
+		RestClient.getPublicUsersList(token);
+		return publicList;
 	}
 
 }

@@ -1,7 +1,5 @@
 package edu.asu.mobicloud;
 
-import java.nio.channels.AsynchronousCloseException;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -31,7 +29,7 @@ public class LoginActivity extends Activity {
 	 */
 	public static final String EXTRA_EMAIL = "edu.asu.mobicloud.authenticator.extra.EMAIL";
 	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
-	private static final String TAG = "edu.asu.mobicloud.LoginActivity";
+	static final String TAG = "edu.asu.mobicloud.LoginActivity";
 	private PreferencesUtil prefsUtil;
 	public String userName = "satya swaroop";
 	/**
@@ -62,7 +60,7 @@ public class LoginActivity extends Activity {
 		mLoginStatusView = findViewById(R.id.login_status);
 		// If token is available skip this activity and forward to main activity
 		String token = prefsUtil.getPreference(TOKEN);
-		if (token != null) {
+		if (token != null && !token.isEmpty()) {
 			mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
 			showProgress(true);
 			mTokenTask = new TokenCheckTask();
@@ -88,8 +86,6 @@ public class LoginActivity extends Activity {
 						return false;
 					}
 				});
-
-		
 
 		findViewById(R.id.sign_in_button).setOnClickListener(
 				new View.OnClickListener() {
@@ -249,6 +245,7 @@ public class LoginActivity extends Activity {
 			showProgress(false);
 
 			if (result) {
+				prefsUtil.update(EXTRA_EMAIL, mEmail);
 				openMain();
 				finish();
 			} else {
@@ -300,6 +297,7 @@ public class LoginActivity extends Activity {
 	}
 
 	public void openMain() {
+
 		Intent intent = new Intent(this, MainActivity.class);
 		intent.putExtra("username", userName);
 		startActivity(intent);

@@ -1,22 +1,26 @@
 package edu.asu.mobicloud;
 
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import edu.asu.mobicloud.adapters.ListAdapter;
 import edu.asu.mobicloud.dataproviders.ApplicationDataProvider;
-import edu.asu.mobicloud.model.Application;
+import edu.asu.mobicloud.rest.model.ApplicationCapsule;
 
-public class DeveloperDetailsActivity extends ListActivity {
+public class DeveloperDetailsActivity extends ListActivity implements Observer {
 	String developerId;
-	List<Application> list;
+	List<ApplicationCapsule> list;
+	ListAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +36,17 @@ public class DeveloperDetailsActivity extends ListActivity {
 		TextView name = (TextView) findViewById(R.id.developerName);
 		name.setText(developerId);
 		populateData();
-		ListAdapter adapter = new ListAdapter(getApplicationContext(), list);
+		adapter = new ListAdapter(getApplicationContext(), list);
 		setListAdapter(adapter);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		ApplicationDataProvider.getInstance().addObserver(this);
 
 	}
 
 	private void populateData() {
 		// TODO Call the api method which returns list of applications
-		list = ApplicationDataProvider.getInstance().getApps(developerId);
+		list = ApplicationDataProvider.getInstance().getAppsByUserId(
+				developerId);
 
 	}
 
@@ -56,6 +62,25 @@ public class DeveloperDetailsActivity extends ListActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.developer_details, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void update(Observable observable, Object data) {
+
+		if (adapter != null) {
+			adapter.notifyDataSetChanged();
+		}
 	}
 
 }

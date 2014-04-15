@@ -48,7 +48,23 @@ public class MainActivity extends BaseActivity implements
 				.newTab()
 				.setText(R.string.title_applications_tab)
 				.setTabListener(
-						new TabListener<MobiListFragment>(this, "apps",
+						new TabListener<MobiListFragment>(this, "exploreapps",
+								MobiListFragment.class));
+		actionBar.addTab(tab);
+
+		tab = actionBar
+				.newTab()
+				.setText(R.string.title_myapplications_tab)
+				.setTabListener(
+						new TabListener<MobiListFragment>(this, "myapps",
+								MobiListFragment.class));
+		actionBar.addTab(tab);
+
+		tab = actionBar
+				.newTab()
+				.setText(R.string.title_users_tab)
+				.setTabListener(
+						new TabListener<MobiListFragment>(this, "users",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
 
@@ -67,6 +83,14 @@ public class MainActivity extends BaseActivity implements
 						new TabListener<MobiListFragment>(this, "developers",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
+		
+		tab = actionBar
+				.newTab()
+				.setText(R.string.title_alldevelopers_tab)
+				.setTabListener(
+						new TabListener<MobiListFragment>(this, "alldevelopers",
+								MobiListFragment.class));
+		actionBar.addTab(tab);
 
 		tab = actionBar
 				.newTab()
@@ -75,6 +99,15 @@ public class MainActivity extends BaseActivity implements
 						new TabListener<MobiListFragment>(this, "groups",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
+
+		tab = actionBar
+				.newTab()
+				.setText(R.string.title_exgroups_tab)
+				.setTabListener(
+						new TabListener<MobiListFragment>(this, "exgroups",
+								MobiListFragment.class));
+		actionBar.addTab(tab);
+
 		context = getApplicationContext();
 		if (checkPlayServices()) {
 			gcm = GoogleCloudMessaging.getInstance(this);

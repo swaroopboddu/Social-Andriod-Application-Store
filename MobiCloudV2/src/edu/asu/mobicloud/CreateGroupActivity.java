@@ -7,6 +7,7 @@ import edu.asu.mobicloud.util.PreferencesUtil;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,13 +19,14 @@ public class CreateGroupActivity extends Activity {
 	EditText description;
 	Button button;
 
-	PreferencesUtil prefsUtil = new PreferencesUtil(getApplicationContext(),
-			MobiListFragment.TAG);
+	PreferencesUtil prefsUtil;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_group);
+		prefsUtil = new PreferencesUtil(getApplicationContext(),
+				MobiListFragment.TAG);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		name = (EditText) findViewById(id.groupName);
 		description = (EditText) findViewById(id.groupDescription);
@@ -45,6 +47,17 @@ public class CreateGroupActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.create_group, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
 	}
 
 }

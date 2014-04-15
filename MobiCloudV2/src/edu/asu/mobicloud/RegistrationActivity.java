@@ -76,7 +76,7 @@ public class RegistrationActivity extends Activity {
 					.setError(getString(R.string.error_field_required));
 			focusView = mConfirmPasswordView;
 			cancel = true;
-		} else if (confirmPassword.equals(password)) {
+		} else if (!confirmPassword.equals(password)) {
 			mConfirmPasswordView
 					.setError(getString(R.string.error_field_required));
 			focusView = mConfirmPasswordView;
@@ -168,10 +168,12 @@ public class RegistrationActivity extends Activity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 
-			String s = RestClient.register(mNameView.getText().toString(),
-					mNameView.getText().toString(), mEmailView.getText()
-							.toString(), mPasswordView.getText().toString(),
-					mMobileNumberView.getText().toString());
+			String s = RestClient
+					.register(mNameView.getText().toString().split(" ")[0],
+							mNameView.getText().toString().split(" ")[1],
+							mEmailView.getText().toString(), mPasswordView
+									.getText().toString(), mMobileNumberView
+									.getText().toString());
 			if (s != null)
 				return true;
 			else

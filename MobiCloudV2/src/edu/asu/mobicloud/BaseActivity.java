@@ -1,5 +1,6 @@
 package edu.asu.mobicloud;
 
+import edu.asu.mobicloud.util.PreferencesUtil;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
@@ -46,6 +47,13 @@ public class BaseActivity extends Activity {
 			Intent intentCreateGroup = new Intent(this,
 					CreateGroupActivity.class);
 			startActivity(intentCreateGroup);
+			break;
+		}
+		case R.id.action_logout: {
+			PreferencesUtil.removeToken(getApplicationContext());
+			Intent intentLogin = new Intent(this, LoginActivity.class);
+			startActivity(intentLogin);
+			finish();
 			break;
 		}
 

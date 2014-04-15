@@ -7,9 +7,13 @@
     <string name="search_hint">search app</string>
     <string name="title_activity_searchable">Search Results</string>
     <string name="title_activity_registration">RegistrationActivity</string>
-    <string name="title_applications_tab">Apps</string>
+    <string name="title_applications_tab">XploreApps</string>
+    <string name="title_myapplications_tab">MyApps</string>
     <string name="title_friends_tab">Friends</string>
     <string name="title_developers_tab">developers</string>
+    <string name="title_developersfollowing_tab">following</string>
+    <string name="title_users_tab">users</string>
+    <string name="title_exgroups_tab">XploreGroups</string>
     <string name="title_groups_tab">groups</string>
     <string name="imageDescription">your image</string>
     <string name="title_activity_details">Application Details</string>
@@ -58,5 +62,8 @@
     <string name="groupDescription">description</string>
     <string name="createGroup">Create Group</string>
     <string name="title_activity_notification">NotificationActivity</string>
+    <string name="action_logout">Logout</string>
+    <string name="members">Members</string>
+    <string name="title_alldevelopers_tab">All Developers</string>
 
 </resources>
