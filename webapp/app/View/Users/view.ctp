@@ -1,3 +1,4 @@
+<?php pr($user); ?>
 <div class="users view">
 <h2><?php echo __('User'); ?></h2>
 	<dl class="dl-horizontal">

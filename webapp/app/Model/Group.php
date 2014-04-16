@@ -28,7 +28,17 @@ class Group extends AppModel {
 		),
 	);
 
-	public $hasOne = 'User';
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email', 'User.phone', 'User.role')
+			));
+	// public $hasOne = array(
+	// 	'User' => array(
+	// 		'className' => 'User',
+	// 		''
+	// 		);
 
 	// var $hasAndBelongsToMany = array(
 	// 'User' => array(

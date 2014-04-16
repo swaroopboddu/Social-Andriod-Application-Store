@@ -15,15 +15,52 @@ class UserFollowersController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	public $uses = array('UserFollower','User','Notification');
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		//$this->Auth->allow('add');
+		$this->Auth->allow('follow','unfollow');
+	}
 /**
  * index method
  * To view the lsit of Followers
  * @return void
  */
 	public function index() {
-		$this->UserFollower->recursive = 0;
-		$this->set('userFollowers', $this->Paginator->paginate());
+		$headers = apache_request_headers();
+		if(isset($headers['token'])) {
+			$token = $headers['token'];
+			$user = $this->User->find('first', array(
+				'conditions' => array('User.token' => $token),
+				'fields' => array('User.id'),
+				'recursive' => 0));
+			//Check if the token's --> UserID is valid
+			if(isset($user['User']['id'])) {
+				if(isset($this->request->params['pass'][0])) {
+					$req_user = $this->User->find('first', array(
+						'conditions' => array('User.id' => $this->request->params['pass'][0])));
+					if(isset($req_user['User']['id'])) {
+						$result = $this->UserFollower->find('all',array(
+							'conditions' => array('UserFollower.user_id' => $req_user['User']['id'])));
+					} else {
+						$result = "Invalid UserID requested";
+					}
+
+				} else {
+					$result = $this->UserFollower->find('all', array(
+						'conditions' => array('UserFollower.user_id' => $user['User']['id'])));
+				}
+			} else {
+				$result = "Failure - Invalid Token ID";
+			}	
+		} else {
+			$result = "Failure - Token ID required";
+		}
+		$this->set('result', $result);
+		$this->set('_serialize', array('result'));
+		// $this->UserFollower->recursive = 0;
+		// $this->set('userFollowers', $this->Paginator->paginate());
 	}
 
 /**
@@ -46,45 +83,67 @@ class UserFollowersController extends AppController {
  *
  * @return void
  */
-	public function add() {
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function follow($id = null) {
 		if ($this->request->is('post')) {
-			if(isset($this->request->params['pass'][0])){
-				if($this->request->params['pass'][0]){
-					$user = $this->User->find('first', array('conditions' => 
-								array('User.token' => $this->request->params['pass'][0]),
+			$headers = apache_request_headers();
+			if(isset($headers['token'])){
+				$token = $headers['token'];
+				$user = $this->User->find('first', array(
+						'conditions' => array('User.token' => $token),
+						'recursive' => 0));
+				//pr($user);
+				if(isset($user['User']['id'])) {
+					if(isset($this->request->params['pass'][0])){
+						$follow_user = $this->User->find('first', array('conditions' => 
+								array('User.id' => $this->request->params['pass'][0]),
 									'recursive' => 0));
-					$data['UserFollower']['user_id'] = $user['User']['id'];
-					$data['UserFollower']['follower_user_id'] = isset($this->request->params['pass'][0];
-					$this->UserFollower->create();
-					if ($this->UserFollower->save($this->request->data)) {
-						$notify['Notification']['user_id'] = isset($this->request->params['pass'][0];
-						$notify['Notification']['description'] = $user['User']['first_name']." ".$user['User']['last_name']." is now following you";
-						$notify['status'] = 1;
-						if($this->Notification->save($notify)){
-							$result = "Success";
-							$this->set('result', $result);
-							$this->set('_serialize', array('result'));
+						//Check if the id passed is valid
+						if(isset($follow_user['User']['id'])) {
+							//Check if he is already following him
+							$conditions = array('UserFollower.user_id' => $user['User']['id'],
+								'UserFollower.follower_user_id' => $follow_user['User']['id']);
+							if($this->UserFollower->hasAny($conditions)) {
+								$result = "Failure-You are already following ".
+											$follow_user['User']['first_name']." ".$follow_user['User']['last_name'];
+							} else {
+								$follower['UserFollower']['user_id'] = $user['User']['id'];
+								$follower['UserFollower']['follower_user_id'] = $follow_user['User']['id'];
+								$this->UserFollower->create();
+								if ($this->UserFollower->save($follower)) {
+									//Notify the user that someone is following him
+									$notify['Notification']['user_id'] = $follow_user['User']['id'];
+									$notify['Notification']['description'] = $user['User']['first_name']." ".$user['User']['last_name']." is now following you";
+									$notify['status'] = 0;
+									if($this->Notification->save($notify)){
+										$result = "Success";
+									} else {
+								//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+										$result = "Failure";
+									}
+								} else {
+									$result = "Failure";
+								}
+							}
 						} else {
-							//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
-							$result = "Failure";
-							$this->set('result', $result);
-							$this->set('_serialize', array('result'));
+							$result = "Failure-Invalid user to follow";
 						}
 					} else {
-						//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
-						$result = "Failure";
-						$this->set('result', $result);
-						$this->set('_serialize', array('result'));
+						$result = "Failure-User ID required to follow";
 					}
-
-				// $this->Session->setFlash(__('The user follower has been saved.'));
-				// return $this->redirect(array('action' => 'index'));
-			} } else {
-				//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
-				$result = "Failure";
-				$this->set('result', $result);
-				$this->set('_serialize', array('result'));
+				} else {
+					$result = "Failure-Invalid token - User unauthorized";
+				}
+			} else {
+				$result = "Failure-User TokenID required to authorize";
 			}
+			$this->set('result', $result);
+			$this->set('_serialize', array('result'));
 		}
 	}
 
@@ -131,4 +190,48 @@ class UserFollowersController extends AppController {
 			$this->Session->setFlash(__('The user follower could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+
+	public function unfollow($id = null) {
+		if ($this->request->is('post')) {
+			$headers = apache_request_headers();
+			if(isset($headers['token'])){
+				$token = $headers['token'];
+				$user = $this->User->find('first', array(
+						'conditions' => array('User.token' => $token),
+						'recursive' => 0));
+				//pr($user);
+				if(isset($user['User']['id'])) {
+					if(isset($this->request->params['pass'][0])){
+						$follow_user = $this->User->find('first', array('conditions' => 
+								array('User.id' => $this->request->params['pass'][0]),
+									'recursive' => 0));
+						//Check if the id passed is valid
+						if(isset($follow_user['User']['id'])) {
+							//Delete the record 
+							if($this->UserFollower->deleteAll(array('UserFollower.user_id' => $user['User']['id'],
+																'UserFollower.follower_user_id' => $follow_user['User']['id']))) {
+								$result = "Success";
+							} else {
+							//$this->Session->setFlash(__('The user follower could not be saved. Please, try again.'));
+									$result = "Failure";
+							}
+						} else {
+							$result = "Failure-Invalid user to unfollow";
+						}
+					} else {
+						$result = "Failure-User ID required to unfollow";
+					}
+				} else {
+					$result = "Failure-Invalid token - User unauthorized";
+				}
+			} else {
+				$result = "Failure-User TokenID required to authorize";
+			}
+			$this->set('result', $result);
+			$this->set('_serialize', array('result'));
+		}
+	}
+
+}
+

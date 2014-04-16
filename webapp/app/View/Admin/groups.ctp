@@ -1,18 +1,11 @@
-<?php //pr($result); ?>
-<div class="col-md-3 actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Group'), array('action' => 'add')); ?></li>
-	</ul>
-</div>
-<div class="col-md-9 groups index">
+<div class="col-md-10 groups index">
 	<h2><?php echo __('Groups'); ?></h2>
 	<table class="table table-striped" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('admin_user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created_on'); ?></th>
+			<th><?php echo h('id'); ?></th>
+			<th><?php echo h('name'); ?></th>
+			<th><?php echo h('admin_user_id'); ?></th>
+			<th><?php echo h('created_on'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($groups as $group): ?>
@@ -29,7 +22,7 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<p>
+	<!-- <p>
 	<?php
 	echo $this->Paginator->counter(array(
 	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
@@ -40,12 +33,6 @@
 		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ''));
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Group'), array('action' => 'add')); ?></li>
-	</ul>
+	?> -->
+	<!-- </div> -->
 </div>

@@ -20,4 +20,11 @@ class UserFriend extends AppModel {
  */
 	public $displayField = 'id';
 
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'friend_user_id',
+			'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email', 'User.phone', 'User.role')
+			));
+
 }

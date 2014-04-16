@@ -25,66 +25,91 @@
 <?php
 echo $this->Html->meta('icon');
 
-echo $this->Html->css('cake.generic');
+// echo $this->Html->css('cake.generic');
 echo $this->Html->css('bootstrap');
+echo $this->Html->css('bootstrap-theme.min');
+echo $this->Html->css('style');
 
 echo $this->fetch('meta');
 echo $this->fetch('css');
 echo $this->fetch('script');
 ?>
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<?php echo $this->Html->script('bootstrap.js') ?>
+<?php echo $this->Html->script('bootstrap.min.js') ?>
 </head>
 <body>
-	<div class="container">
-		<header id="header">
-			<div class = "row-fluid">
-			<div class = "span9">
-			<?php echo $this->Html->image('ss_logo.png', array("alt" => "Secure Social",
-	 														'url' => array('controller' => 'sites', 'action'=>'index'))); ?>
-			</div>
-			<div class = "span3">
-		<?php
-			if($this->Session->check('User.id')) {
-				echo "welcome, ";
-				echo $this->Html->link($this->Session->read('User.first_name'), array('controller' => 'users', 'action' => 'view', $this->Session->read('User.id'))); ?>
-				|
-				<?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'), array('type'=>'button', 'class' => 'btn btn-primary'));
-			} else {
-				echo $this->Html->link('Login', array('controller'=>'users', 'action'=>'login'));
+	<div id ="wrapper">
+		<div class="container" id="main">
+				<div class="container-fluid" id="header">
+					<?php if($this->Session->check('User.id') && $this->Session->read('User.role') == "admin" ) { ?>
+					<div class="row">
+						<nav class="navbar navbar-inverse" role="navigation">
+							<div class="container">
+								<div class="navbar-inner">
+									<ul class="nav navbar-nav">
+										<li><?php echo $this->Html->link('Admin Panel', array('controller' => 'admin', 'action' => 'index')); ?></li>
+										<li><?php echo $this->Html->link('Users', array('controller' => 'admin', 'action' => 'users')); ?></li>
+					         			<li><?php echo $this->Html->link('Applications', array('controller' => 'admin', 'action' => 'applications')); ?></li>
+					         			<li><?php echo $this->Html->link('Groups', array('controller' => 'admin', 'action' => 'groups')); ?></li>
+					         			<li><?php echo $this->Html->link('Update', array('controller' => 'admin', 'action' => 'update')); ?></li>
+					         		</ul>
+					        	</div>
+				        	</div>
+				        </nav>
+					</div>
+					<?php } ?>
+						<div class = "row">
+							<div class = "col-md-9">
+							<?php echo $this->Html->image('ss_logo.png', array("alt" => "Secure Social",
+					 														'url' => array('controller' => 'sites', 'action'=>'index'))); ?>
+							</div>
+							<div class = "col-md-3 text-center">
+								<br></br>
+								<?php
+									if($this->Session->check('User.id')) {
+										echo "welcome, ";
+										echo $this->Html->link($this->Session->read('User.first_name'), array('controller' => 'users', 'action' => 'view', $this->Session->read('User.id'))); ?>
+										|
+										<?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'), array('type'=>'button', 'class' => 'btn btn-primary'));
+									} else {
+										echo $this->Html->link('Login', array('controller'=>'users', 'action'=>'login'));
+									}
+								 ?>
+							</div>
+						</div>
+				</div>
+			<?php 
+			function echoActiveClassIfRequestMatches($requestUri)
+			{
+			    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+			    if ($current_file_name == $requestUri)
+			        echo 'class="active"';
 			}
-		 ?>
+			?>
+			<br></br>
+			<div id="container">
+				<div class="row-fluid">
+					<!-- <div class="container-fluid"> -->
+						<nav class="navbar navbar-inverse">
+							<ul class="nav navbar-nav" id="main-nav">
+								<li <?=echoActiveClassIfRequestMatches("users")?>><?php echo $this->Html->link('Home', array('controller' => 'users', 'action' => 'index')); ?></li>
+			         			<li <?=echoActiveClassIfRequestMatches("applications")?>><?php echo $this->Html->link('Applications', array('controller' => 'applications', 'action' => 'index')); ?></li>
+			         
+			            	</ul>
+			            </nav>
+					<!-- </div> -->
+				</div>
+			<?php echo $this->Session->flash(); ?>
+			<?php echo $this->Session->flash('auth'); ?>
+			
+			<?php echo $this->fetch('content'); ?>
+			</div>
 		</div>
 	</div>
-		</header>
-		<?php 
-		function echoActiveClassIfRequestMatches($requestUri)
-		{
-		    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
-		    if ($current_file_name == $requestUri)
-		        echo 'class="active"';
-		}
-		?>
-		<div id="content">
-			<div class="row-fluid">
-				<div class="navbar navbar-inverse">
-					<div class="navbar-inner">
-						<ul class="nav" id="main-nav">
-							<li <?=echoActiveClassIfRequestMatches("users")?>><?php echo $this->Html->link('Home', array('controller' => 'users', 'action' => 'index')); ?></li>
-		         			<li <?=echoActiveClassIfRequestMatches("applications")?>><?php echo $this->Html->link('Applications', array('controller' => 'applications', 'action' => 'index')); ?></li>
-		         
-		            	</ul>
-		            </div>
-				</div>
-			</div>
-		<?php echo $this->Session->flash(); ?>
-		<?php echo $this->Session->flash('auth'); ?>
-		
-		<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-		</div>
+	<div id="footer">
+		<span>&#64;2014 Arizona State University</span>
 	</div>
 	<?php //echo $this->element('sql_dump'); ?>
 </body>

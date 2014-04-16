@@ -29,7 +29,19 @@ Router::resourceMap(array(
     array('action' => 'edit', 'method' => 'PUT', 'id' => true),
     array('action' => 'delete', 'method' => 'DELETE', 'id' => true),
     array('action' => 'update', 'method' => 'POST', 'id' => true),
-    array('action' => 'mobile_login', 'method' => 'POST', 'id' => false)
+    array('action' => 'mobile_login', 'method' => 'POST', 'id' => false),
+    array('action' => 'group_join', 'method' => 'POST', 'id' => true),
+    array('action' => 'group_unjoin', 'method' => 'POST', 'id' => true),
+    array('action' => 'follow', 'method' => 'POST', 'id' => true),
+    array('action' => 'unfollow', 'method' => 'POST', 'id' => true),
+    array('action' => 'add_friend', 'method' => 'POST', 'id' => true),
+    array('action' => 'unfriend', 'method' => 'POST', 'id' => true),
+    array('action' => 'confirm_friend', 'method' => 'POST', 'id' => false),
+    array('action' => 'mobile_users', 'method' => 'GET', 'id' => false),
+    array('action' => 'developers', 'method' => 'GET', 'id' => false),
+    array('action' => 'search_users', 'method' => 'GET', 'id' => false),
+    array('action' => 'search_applications', 'method' => 'GET', 'id' => false),
+    array('action' => 'search_groups', 'method' => 'GET', 'id' => false),
 ));
 /*mapResources to Controllers*/
 
@@ -37,6 +49,11 @@ Router::resourceMap(array(
 	Router::mapResources('applications');
 	Router::mapResources('groups');
 	Router::mapResources('notifications');
+	Router::mapResources('user_followers');
+	Router::mapResources('user_friends');
+    Router::mapResources('search');
+    Router::mapResources('comments');
+
 	
 	Router::parseExtensions('json');
 

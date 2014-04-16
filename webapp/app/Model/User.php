@@ -74,9 +74,13 @@ class User extends AppModel {
 			'not empty' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Please enter your password'),
+			'minlength' => array(                              
+                'rule' => array('minLength', 6),
+                'message' => 'Passwords must be at least 6 characters long.',
+                        ),
 			'match passwords' =>array(
 				'rule' => 'matchPasswords',
-				'message' => 'Your passwords do not match')
+				'message' => 'Your passwords do not match'),
 		),
 		'password_confirmation' => array(
 			'not empty' => array(
@@ -101,6 +105,14 @@ var $hasMany = array(
 	'Application' => array(
 		'className' => 'Application',
 		'foreignKey' => 'user_id',
+		'fields' => array(
+			'Application.id',
+			 'Application.user_id',
+			  'Application.title',
+			   'Application.description',
+			    'Application.count_rating',
+			     'Application.rating',
+			      'Application.downloads'),
 		//'conditions' => array('approved' = 1)
 		'order' => 'rating DESC'
 		),
@@ -114,6 +126,11 @@ var $hasMany = array(
 		'className' => 'UserFollower',
 		'foreignKey' => 'user_id',
 		'order' => 'follower_user_id DESC'
+		),
+	'Comment' => array(
+		'className' => 'Comment',
+		'foreignKey' => 'user_id',
+		'order' => 'id DESC'
 		),
 	// 'Group' => array(
 	// 	'className' => 'Group',

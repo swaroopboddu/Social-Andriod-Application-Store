@@ -75,7 +75,6 @@ p {
 /** Layout **/
 #container {
 	text-align: left;
-	width: 960px;
 }
 
 #header{
@@ -99,6 +98,7 @@ p {
 	text-decoration: underline;
 }
 #content{
+	background: #fff;
 	clear: both;
 	color: #333;
 	padding: 10px 20px 40px 20px;
@@ -110,7 +110,7 @@ p {
 	text-align: right;
 }
 #header a, #footer a {
-	color: red;
+	/*color: #fff;*/
 }
 
 /** containers **/
@@ -250,11 +250,11 @@ dt {
 	vertical-align: top;
 	width: 10em;
 }
-/*dd {
+dd {
 	margin-left: 10em;
 	margin-top: -2em;
 	vertical-align: top;
-}*/
+}
 
 /** Forms **/
 form {
@@ -287,7 +287,8 @@ fieldset fieldset div {
 }
 form div {
 	clear: both;
-	padding: 0.5em;
+	margin-bottom: 1em;
+	padding: .5em;
 	vertical-align: text-top;
 }
 form .input {
@@ -308,13 +309,15 @@ form div.submit {
 }
 label {
 	display: block;
-	font-size: 100%;
+	font-size: 110%;
 	margin-bottom:3px;
 }
 input, textarea {
 	clear: both;
+	font-size: 140%;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
-	width:auto;
+	width:98%;
 }
 select {
 	clear: both;
@@ -503,7 +506,7 @@ p.error em {
 	clear: both;
 }
 
-/* Buttons and button links 
+/* Buttons and button links */
 input[type=submit],
 .actions ul li a,
 .actions a {
@@ -529,13 +532,13 @@ input[type=submit],
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
 	-webkit-user-select: none;
 	user-select: none;
-} 
+}
 .actions ul li a:hover,
 .actions a:hover {
 	background: #ededed;
 	border-color: #acacac;
 	text-decoration: none;
-} */
+}
 input[type=submit]:active,
 .actions ul li a:active,
 .actions a:active {

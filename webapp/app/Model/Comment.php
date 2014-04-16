@@ -20,4 +20,13 @@ class Comment extends AppModel {
  */
 	public $displayField = 'id';
 
+	public $belongsTo = array(
+		'Application' => array(
+			'className' => 'Application'
+			),
+		'User' => array(
+			'className' => 'User'
+			)
+		);
+
 }

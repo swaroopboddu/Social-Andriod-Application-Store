@@ -15,9 +15,13 @@ class UsersController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	public $uses = array('User','UserFriend', 'UserFollower');
 
 public function beforeFilter() {
 	parent::beforeFilter();
+	//$this->Auth->allow('index');
+	$this->Auth->allow('mobile_users');
+	$this->Auth->allow('developers');
 	$this->Auth->allow('add');
 	$this->Auth->allow('mobile_login');
 	if($this->Session->check('User.id')){
@@ -43,6 +47,7 @@ public function login() {
 				$this->Session->write('User.last_name',  $user['last_name']);
 				$this->Session->write('User.id',         $user['id']);
 				$this->Session->write('User.email',      $user['email']);
+				$this->Session->write('User.role',      $user['role']);
 				//Update logged in time to users database
 				$this->User->updateAll(array('User.last_login'=>"'".$date."'"),array('User.id' => $this->Session->read('User.id')));
 				$this->Session->setFlash('Welcome '.$user['first_name']." ".$user['last_name']);
@@ -66,13 +71,15 @@ public function mobile_login() {
 				$this->User->updateAll(array(
 					'User.last_login'=>"'".$date."'",
 					'User.token' => "'".$user_uuid."'"),array('User.id' => $user['id']));
-					$this->redirect($this->Auth->redirectUrl(array(
-						'controller' => 'users' , 
-						'action' => 'index/token/'.$user_uuid.'.json')));		
-
+				$result = $this->User->find('first', array(
+					'conditions' => array('User.id' => $user['id']),
+					'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email',
+					 'User.phone', 'User.role', 'User.token')));
+				$this->set('result',$result);
+				$this->set('_serialize',array('result'));		
 		} else {
-			$login = "Failure";
-			$this->set('_serialize', array($login));
+			$result = "Failure";
+			$this->set('_serialize', array($result));
 			$this->response->statusCode(401);
 		}
 	}
@@ -104,35 +111,134 @@ public function logout() {
 		// 	pr($this->request->params);
 		// 	exit(1);
 		// }
-		if($this->Session->read('User.id') != null || $this->request->params['pass'] != null) {
-			$this->User->recursive = 1;
+		$headers = apache_request_headers();
+
+		if($this->Session->read('User.id') != null || isset($headers['token'])) {
 			if($this->Session->read('User.id') != null) {
 				$id = $this->Session->read('User.id');
 				if(!empty($id)) {
 					$result = $this->User->find('first', array('conditions'=>array('User.id' => $id)));
-					// foreach ($result['Application'] as $app) {
-					// 	//pr($app['id']);
-						
-					// }
-					//$applicationPath = $this->ApplicaitonRevision->find('first', array())
 					$this->set('result', $result);
 					$this->set('_serialize', array('result'));
 				}
 			}
-			if($this->request->params['pass']!=null) {
-				$token = $this->request->params['pass'][1];
-				$result = $this->User->find('first', array(
-					'conditions' => array(
-						'User.token' => $token)));
-				$this->set('result', $result);
-				$this->set('_serialize',array('result'));
+			if(isset($headers['token'])) {
+			//Return token --> users list of applications
+				$token = $headers['token'];
+				$user = $this->User->find('first', array(
+					'conditions' => array('User.token' => $token),
+					'recursive' => 0));
+				if(isset($user['User']['id'])) {
+					//Check if params is set -- List of apps for passed UserID
+					if(isset($this->request->params['pass'][0])) {
+						$conditions = array('User.id' => $this->request->params['pass'][0]);
+						if($this->User->hasAny($conditions)) {
+							$result = $this->User->find('first', array(
+										'conditions' => array('User.id' => $this->request->params['pass'][0]),
+										'recursive' => 1));
+							if($result['User']['role'] == 'mobile') {
+								$friend_check = $this->UserFriend->find('first',array(
+									'conditions' => array('UserFriend.user_id' => $user['User']['id'],
+										'UserFriend.friend_user_id' => $result['User']['id'])));
+								if(!empty($friend_check)) {
 
+									if($friend_check['UserFriend']['status'] == 0) {
+										$result['User']['relationship'] = "Friends";
+									} elseif($friend_check['UserFriend']['status'] == 1) {
+										$result['User']['relationship'] = "Request Sent";
+									} else {
+										$result['User']['relationship'] = "Request Pending";
+									}
+								} else {
+									$result['User']['relationship'] = "Not Friends";
+								}
+							} else {
+								$follower_check = $this->UserFollower->find('first', array(
+									'conditions' => array('UserFollower.user_id' => $result['User']['id'],
+										'UserFollower.follower_user_id' => $user['User']['id'])));
+								if(!empty($follower_check)) {
+									$result['User']['relationship'] = "Following";
+								} else {
+									$result['User']['relationship'] = "Not Following";
+								}
+							}
+							//pr($result);
+							$this->set('result',$result);
+							$this->set('_serialize', array('result'));
+						} else {
+							$result = "Invalid User ID";
+							$this->set('result',$result);
+							$this->set('_serialize', array('result'));
+						}
+					} else { 
+						$result = $this->User->find('all', array(
+						'conditions' => array('User.id' => $user['User']['id']),
+						'recursive' => 2));
+						$this->set('result',$result);
+						$this->set('_serialize', array('result'));
+					}
+				} else {
+					//Invalid token
+					$result = "Invalid token id";
+					$this->set('_serialize', array($result));
+				}
 			}
-
 		} else { 
 			$this->redirect(array('controller' => 'users', 'action' => 'login'));
 	}
 		//$this->set('users', $this->Paginator->paginate());
+	}
+
+	public function mobile_users() {
+		$headers = apache_request_headers();
+		if(isset($headers['token'])) {
+			$token = $headers['token'];
+			$user = $this->User->find('first', array(
+				'conditions' => array('User.token' => $token),
+				'fields' => array('User.id'),
+				'recursive' => 0));
+			//Check if the token's --> UserID is valid
+			if(isset($user['User']['id'])) {
+				$result = $this->User->find('all', array(
+					'conditions' => array('User.role' => 'mobile'),
+					'order' => array('User.id DESC'),
+					'recursive' => 0,
+					'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email', 'User.phone', 'User.role')));
+			} else {
+				$result = "Failure - Invalid Token ID";
+			}	
+		} else {
+			$result = "Failure - Token ID required";
+		}
+		$this->set('result', $result);
+		$this->set('_serialize', array('result'));
+
+	}
+
+	public function developers() {
+		$headers = apache_request_headers();
+		if(isset($headers['token'])) {
+			$token = $headers['token'];
+			$user = $this->User->find('first', array(
+				'conditions' => array('User.token' => $token),
+				'fields' => array('User.id'),
+				'recursive' => 0));
+			//Check if the token's --> UserID is valid
+			if(isset($user['User']['id'])) {
+				$result = $this->User->find('all', array(
+					'conditions' => array('User.role' => 'developer'),
+					'order' => array('User.id DESC'),
+					'recursive' => 0,
+					'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email', 'User.phone', 'User.role')));
+			} else {
+				$result = "Failure - Invalid Token ID";
+			}	
+		} else {
+			$result = "Failure - Token ID required";
+		}
+		$this->set('result', $result);
+		$this->set('_serialize', array('result'));
+
 	}
 
 /**
@@ -170,11 +276,15 @@ public function logout() {
 				}
 			$this->User->create();
 			if ($this->User->save($user)) {
+				$id = $this->User->getLastInsertID();
 				if(isset($this->request->params['ext'])){
 					if($this->request->params['ext'] == 'json') {
-					$this->redirect($this->Auth->redirectUrl(array(
-						'controller' => 'users' , 
-						'action' => 'index/token/'.$user_uuid.'.json')));
+						$result = $this->User->find('first', array(
+							'conditions' => array('User.id' => $id),
+							'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email',
+							 'User.phone', 'User.role', 'User.token')));
+						$this->set('result',$result);
+						$this->set('_serialize',array('result'));
 					}
 				}
 				else {
@@ -182,7 +292,20 @@ public function logout() {
 					return $this->redirect(array('action' => 'index'));
 				}
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				if(isset($this->request->params['ext'])) {
+					if($this->request->params['ext'] == 'json') {
+						$conditions = array('User.email' => $user['User']['email']);
+						if($this->User->hasAny($conditions)) {
+							$result = "Failure-Email ID already exists";
+						} else {
+							$result = "Failure-Registration failed";
+						}
+						$this->set('result',$result);
+						$this->set('_serialize',array('result'));
+					} else {
+						$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+					}
+				}
 			}
 		}
 	}
@@ -224,10 +347,12 @@ public function logout() {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$this->request->onlyAllow('post', 'delete');
-		if ($this->User->delete()) {
-			$this->Session->setFlash(__('The user has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+		if($this->Session->read('User.role') == 'admin') {
+			if ($this->User->delete()) {
+				$this->Session->setFlash(__('The user has been deleted.'));
+			} else {
+				$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+			}
 		}
 		return $this->redirect(array('action' => 'index'));
 	}}

@@ -98,7 +98,7 @@ var $hasMany = array(
 		),
 	'comment' => array(
 		'className' => 'Comment',
-		'foreignKey' => 'app_id',
+		'foreignKey' => 'application_id',
 		//'conditions' => array('status' => 'approved'),
 		'order' => 'id DESC'
 		),

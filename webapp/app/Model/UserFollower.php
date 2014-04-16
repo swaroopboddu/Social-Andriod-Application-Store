@@ -20,4 +20,11 @@ class UserFollower extends AppModel {
  */
 	public $displayField = 'id';
 
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'follower_user_id',
+			'fields' => array('User.id', 'User.first_name', 'User.last_name', 'User.email', 'User.phone', 'User.role')
+			));
+
 }
