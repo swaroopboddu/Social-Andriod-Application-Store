@@ -1,12 +1,21 @@
 package edu.asu.mobicloud;
 
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
+
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import edu.asu.mobicloud.dataproviders.NotificationDataProvider;
+import edu.asu.mobicloud.rest.model.Notification;
+import edu.asu.mobicloud.util.PreferencesUtil;
 
-public class NotificationActivity extends ListActivity {
+public class NotificationActivity extends ListActivity implements Observer {
+	List<Notification> notifications;
+	ArrayAdapter<Notification> adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +23,13 @@ public class NotificationActivity extends ListActivity {
 		setContentView(R.layout.activity_notification);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		setTitle("notifications");
+		notifications = NotificationDataProvider.getInstance().getList(
+				PreferencesUtil.getToken(getApplicationContext()));
+		adapter = new ArrayAdapter<Notification>(this,
+				R.layout.activity_notification, notifications);
+		setListAdapter(adapter);
+
 	}
 
 	/**
@@ -36,17 +52,20 @@ public class NotificationActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			// This ID represents the Home or Up button. In the case of this
-			// activity, the Up button is shown. Use NavUtils to allow users
-			// to navigate up one level in the application structure. For
-			// more details, see the Navigation pattern on Android Design:
-			//
-			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
-			//
-			NavUtils.navigateUpFromSameTask(this);
+			onBackPressed();
 			return true;
+		case R.id.action_refresh:
+			notifications = NotificationDataProvider.getInstance().getList(
+					PreferencesUtil.getToken(getApplicationContext()));
+			adapter.notifyDataSetChanged();
 		}
+
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void update(Observable observable, Object data) {
+		adapter.notifyDataSetChanged();
 	}
 
 }

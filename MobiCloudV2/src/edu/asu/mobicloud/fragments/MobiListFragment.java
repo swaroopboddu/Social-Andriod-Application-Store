@@ -23,6 +23,7 @@ import edu.asu.mobicloud.dataproviders.ApplicationDataProvider;
 import edu.asu.mobicloud.dataproviders.DeveloperDataProvider;
 import edu.asu.mobicloud.dataproviders.FriendsDataProvider;
 import edu.asu.mobicloud.dataproviders.GroupDataProvider;
+import edu.asu.mobicloud.dataproviders.SearchDataProvider;
 import edu.asu.mobicloud.interfaces.ListFragmentDataProvider;
 import edu.asu.mobicloud.model.ListData;
 import edu.asu.mobicloud.util.PreferencesUtil;
@@ -33,11 +34,13 @@ public class MobiListFragment extends ListFragment implements Observer {
 	List<? extends ListData> friends = null;
 	List<? extends ListData> applications = null;
 	List<? extends ListData> developers = null;
+	List<? extends ListData> allDevelopers = null;
 	List<? extends ListData> groups = null;
 	ApplicationDataProvider appProvider = ApplicationDataProvider.getInstance();
 	DeveloperDataProvider devProvider = DeveloperDataProvider.getInstance();
 	FriendsDataProvider fProvider = FriendsDataProvider.getInstance();
 	GroupDataProvider groupProvider = GroupDataProvider.getInstance();
+	SearchDataProvider searchProvider = SearchDataProvider.getInstance();
 	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
 	public static final String TAG = "edu.asu.mobicloud.LoginActivity";
 	PreferencesUtil prefUtil;
@@ -49,6 +52,7 @@ public class MobiListFragment extends ListFragment implements Observer {
 		devProvider.addObserver(this);
 		fProvider.addObserver(this);
 		groupProvider.addObserver(this);
+		searchProvider.addObserver(this);
 	}
 
 	@Override
@@ -70,8 +74,7 @@ public class MobiListFragment extends ListFragment implements Observer {
 					(Parcelable) applications.get((int) id));
 			this.getActivity().startActivity(intent);
 
-		}
-		if (tag.equalsIgnoreCase("myapps")) {
+		} else if (tag.equalsIgnoreCase("searchapps")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					DetailsActivity.class);
 			intent.putExtra("application",
@@ -79,36 +82,57 @@ public class MobiListFragment extends ListFragment implements Observer {
 			this.getActivity().startActivity(intent);
 
 		}
-		if (tag.equalsIgnoreCase("users")) {
+
+		else if (tag.equalsIgnoreCase("searchusers")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					UserDetailsActivity.class);
 			intent.putExtra("name", (Parcelable) friends.get((int) id));
 			this.getActivity().startActivity(intent);
 
-		}
-		if (tag.equalsIgnoreCase("friends")) {
+		} else if (tag.equalsIgnoreCase("myapps")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					DetailsActivity.class);
+			intent.putExtra("application",
+					(Parcelable) applications.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		} else if (tag.equalsIgnoreCase("users")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					UserDetailsActivity.class);
 			intent.putExtra("name", (Parcelable) friends.get((int) id));
 			this.getActivity().startActivity(intent);
 
-		}
-		if (tag.equalsIgnoreCase("developers")) {
+		} else if (tag.equalsIgnoreCase("friends")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					UserDetailsActivity.class);
+			intent.putExtra("name", (Parcelable) friends.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		} else if (tag.equalsIgnoreCase("developers")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					DeveloperDetailsActivity.class);
 			intent.putExtra("name", (Parcelable) developers.get((int) id));
 			this.getActivity().startActivity(intent);
 
-		}
+		} else if (tag.equalsIgnoreCase("alldevelopers")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					DeveloperDetailsActivity.class);
+			intent.putExtra("name", (Parcelable) allDevelopers.get((int) id));
+			this.getActivity().startActivity(intent);
 
-		if (tag.equalsIgnoreCase("groups")) {
+		} else if (tag.equalsIgnoreCase("groups")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					GroupDetailsActivity.class);
 			intent.putExtra("name", (Parcelable) groups.get((int) id));
 			this.getActivity().startActivity(intent);
 
-		}
-		if (tag.equalsIgnoreCase("exgroups")) {
+		} else if (tag.equalsIgnoreCase("exgroups")) {
+			Intent intent = new Intent(this.getActivity().getBaseContext(),
+					GroupDetailsActivity.class);
+			intent.putExtra("name", (Parcelable) groups.get((int) id));
+			this.getActivity().startActivity(intent);
+
+		} else if (tag.equalsIgnoreCase("searchgroups")) {
 			Intent intent = new Intent(this.getActivity().getBaseContext(),
 					GroupDetailsActivity.class);
 			intent.putExtra("name", (Parcelable) groups.get((int) id));
@@ -132,13 +156,11 @@ public class MobiListFragment extends ListFragment implements Observer {
 			adapter = new ListAdapter(inflater.getContext(), applications);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("users")) {
-			friends = (List<? extends ListData>) fProvider
-					.getPublicList(prefUtil.getPreference(TOKEN));
+			friends = fProvider.getPublicList(prefUtil.getPreference(TOKEN));
 			adapter = new ListAdapter(inflater.getContext(), friends);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("friends")) {
-			friends = (List<? extends ListData>) fProvider.getList(prefUtil
-					.getPreference(TOKEN));
+			friends = fProvider.getList(prefUtil.getPreference(TOKEN));
 			adapter = new ListAdapter(inflater.getContext(), friends);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("developers")) {
@@ -147,9 +169,9 @@ public class MobiListFragment extends ListFragment implements Observer {
 			adapter = new ListAdapter(inflater.getContext(), developers);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("alldevelopers")) {
-			developers = devProvider.getPublicList(prefUtil
+			allDevelopers = devProvider.getPublicList(prefUtil
 					.getPreference(TOKEN));
-			adapter = new ListAdapter(inflater.getContext(), developers);
+			adapter = new ListAdapter(inflater.getContext(), allDevelopers);
 			setListAdapter(adapter);
 		} else if (tag.equalsIgnoreCase("groups")) {
 			groups = groupProvider.getList(prefUtil.getPreference(TOKEN));
@@ -159,6 +181,21 @@ public class MobiListFragment extends ListFragment implements Observer {
 			groups = groupProvider.getPublicList();
 			adapter = new ListAdapter(inflater.getContext(), groups);
 			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("searchgroups")) {
+			groups = searchProvider.getGroupsList(PreferencesUtil
+					.getToken(getActivity().getApplicationContext()));
+			adapter = new ListAdapter(inflater.getContext(), groups);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("searchapps")) {
+			applications = searchProvider.searchApps(PreferencesUtil
+					.getToken(getActivity().getApplicationContext()));
+			adapter = new ListAdapter(inflater.getContext(), applications);
+			setListAdapter(adapter);
+		} else if (tag.equalsIgnoreCase("searchusers")) {
+			friends = searchProvider.searchUsers(PreferencesUtil
+					.getToken(getActivity().getApplicationContext()));
+			adapter = new ListAdapter(inflater.getContext(), friends);
+			setListAdapter(adapter);
 		}
 
 		return super.onCreateView(inflater, container, savedInstanceState);
@@ -167,7 +204,7 @@ public class MobiListFragment extends ListFragment implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if (arg1 instanceof String && arg1.equals("Login Fail")) {
-			PreferencesUtil.removeToken(getActivity());
+			PreferencesUtil.removeToken(getActivity().getApplicationContext());
 			Intent intentLogin = new Intent(
 					this.getActivity().getBaseContext(), LoginActivity.class);
 			startActivity(intentLogin);

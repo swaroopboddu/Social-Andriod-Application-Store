@@ -65,5 +65,9 @@
     <string name="action_logout">Logout</string>
     <string name="members">Members</string>
     <string name="title_alldevelopers_tab">All Developers</string>
+    <string name="title_notification">Notifications</string>
+     <string name="apps">apps</string>
+     <string name="reject">reject</string>
+     <string name="action_refresh">refresh</string>
 
 </resources>

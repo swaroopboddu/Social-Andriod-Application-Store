@@ -18,6 +18,7 @@ public class DeveloperDataProvider extends Observable {
 	private static DeveloperDataProvider devProvider;
 	private List<User> developerList = new ArrayList<User>();
 	private List<User> publicList = new ArrayList<User>();
+	private List<User> usersList = new ArrayList<User>();
 
 	public List<User> getDeveloperList(String token) {
 		RestClient.getFollowers(token);
@@ -26,7 +27,7 @@ public class DeveloperDataProvider extends Observable {
 
 	private void setDeveloperList(List<User> developerList) {
 		this.developerList.clear();
-		developerList.addAll(developerList);
+		this.developerList.addAll(developerList);
 	}
 
 	public List<User> getPublicList(String token) {
@@ -69,6 +70,50 @@ public class DeveloperDataProvider extends Observable {
 			setChanged();
 			notifyObservers(this.developerList);
 		}
+	}
+
+	public void onUpdateUsersCallback(List<User> users) {
+		if (users != null && !users.isEmpty()) {
+			setUsersList(users);
+			setChanged();
+			notifyObservers(this.usersList);
+		}
+	}
+
+	private void setUsersList(List<User> users) {
+		usersList.clear();
+		usersList.addAll(users);
+	}
+
+	public List<User> getUserFollowers(String token, String userId) {
+		usersList.clear();
+		RestClient.getUsersFollowers(token, userId);
+		return usersList;
+	}
+
+	public void onFailure() {
+		setChanged();
+		notifyObservers("Login Fail");
+	}
+
+	public void follow(String token, User developer) {
+		if (!developerList.contains(developer)) {
+			developerList.add(developer);
+			RestClient.followDeveloper(token, developer);
+		}
+
+	}
+
+	public void unFollow(String token, User developer) {
+		if (developerList.contains(developer)) {
+			developerList.remove(developer);
+			RestClient.unFollowDeveloper(token, developer);
+		}
+	}
+
+	public void onUpdateCallback() {
+		setChanged();
+		notifyObservers();
 	}
 
 }

@@ -33,7 +33,7 @@ public class User implements Parcelable, ListData {
 		return true;
 	}
 
-	@SerializedName("id	")
+	@SerializedName("id")
 	String id;
 	@SerializedName("first_name")
 	String firstName;
@@ -45,6 +45,16 @@ public class User implements Parcelable, ListData {
 	String token;
 	@SerializedName("role")
 	String role;
+	@SerializedName("relationship")
+	String relation;
+
+	public String getRelation() {
+		return relation;
+	}
+
+	public void setRelation(String relation) {
+		this.relation = relation;
+	}
 
 	public User(String email) {
 		this.email = email;

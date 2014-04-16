@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import edu.asu.mobicloud.dataproviders.SearchDataProvider;
 import edu.asu.mobicloud.fragments.MobiListFragment;
 import edu.asu.mobicloud.interfaces.ListFragmentDataProvider;
 import edu.asu.mobicloud.listeners.TabListener;
@@ -27,36 +28,28 @@ public class SearchableActivity extends BaseActivity implements
 
 		ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowTitleEnabled(true);
 		Tab tab = actionBar
 				.newTab()
 				.setText(R.string.title_applications_tab)
 				.setTabListener(
-						new TabListener<MobiListFragment>(this, "apps",
+						new TabListener<MobiListFragment>(this, "searchapps",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
 
 		tab = actionBar
 				.newTab()
-				.setText(R.string.title_friends_tab)
+				.setText(R.string.title_users_tab)
 				.setTabListener(
-						new TabListener<MobiListFragment>(this, "friends",
+						new TabListener<MobiListFragment>(this, "searchusers",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
 
 		tab = actionBar
 				.newTab()
-				.setText(R.string.title_developers_tab)
+				.setText(R.string.title_groups_tab)
 				.setTabListener(
-						new TabListener<MobiListFragment>(this, "developers",
-								MobiListFragment.class));
-		actionBar.addTab(tab);
-		
-		tab = actionBar
-				.newTab()
-				.setText(R.string.title_developers_tab)
-				.setTabListener(
-						new TabListener<MobiListFragment>(this, "groups",
+						new TabListener<MobiListFragment>(this, "searchgroups",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -72,14 +65,14 @@ public class SearchableActivity extends BaseActivity implements
 	private void handleIntent(Intent intent) {
 		if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 			String query = intent.getStringExtra(SearchManager.QUERY);
+			setTitle(query);
 			doMySearch(query);
 		}
 
 	}
 
 	private void doMySearch(String query) {
-		// TODO Auto-generated method stub
-		System.out.println("I am called");
+		SearchDataProvider.getInstance().setSearch(query);
 	}
 
 	@Override

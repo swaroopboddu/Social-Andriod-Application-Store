@@ -64,8 +64,14 @@ public class GroupDetailsActivity extends ListActivity implements Observer {
 
 			@Override
 			public void onClick(View v) {
-				RestClient.followGroup(group.getGroup(),
-						PreferencesUtil.getToken(getApplicationContext()));
+				if (follow.getText().toString().equalsIgnoreCase("follow")) {
+					RestClient.followGroup(group.getGroup(),
+							PreferencesUtil.getToken(getApplicationContext()));
+				} else if (follow.getText().toString()
+						.equalsIgnoreCase("unfollow")) {
+					RestClient.unFollowGroup(group.getGroup(),
+							PreferencesUtil.getToken(getApplicationContext()));
+				}
 			}
 		});
 
@@ -129,6 +135,8 @@ public class GroupDetailsActivity extends ListActivity implements Observer {
 					follow.setEnabled(false);
 					follow.setText("Disabled");
 				}
+			} else {
+				follow.setText("follow");
 			}
 			adapter.notifyDataSetChanged();
 		}

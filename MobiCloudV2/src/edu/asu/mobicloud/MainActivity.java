@@ -2,10 +2,6 @@ package edu.asu.mobicloud;
 
 import java.io.IOException;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.content.Context;
@@ -15,6 +11,11 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 import edu.asu.mobicloud.fragments.MobiListFragment;
 import edu.asu.mobicloud.interfaces.ListFragmentDataProvider;
 import edu.asu.mobicloud.listeners.TabListener;
@@ -107,7 +108,7 @@ public class MainActivity extends BaseActivity implements
 						new TabListener<MobiListFragment>(this, "exgroups",
 								MobiListFragment.class));
 		actionBar.addTab(tab);
-
+		
 		context = getApplicationContext();
 		if (checkPlayServices()) {
 			gcm = GoogleCloudMessaging.getInstance(this);

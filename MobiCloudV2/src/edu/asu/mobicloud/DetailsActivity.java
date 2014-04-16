@@ -29,6 +29,7 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import static edu.asu.mobicloud.util.Constants.API_URL;
 
 import com.squareup.okhttp.OkHttpClient;
 
@@ -48,7 +49,9 @@ public class DetailsActivity extends ListActivity {
 	private String path;
 	private final String prefsName = "edu.asu.mobicloud.applications";
 	// TODO: to be moved to more generic place
-	private final String url = "http://androidgeekvm.vlab.asu.edu/webapp/applications/download_app/";
+	// private final String url =
+	// "http://androidgeekvm.vlab.asu.edu/webapp/applications/download_app/";
+	private final String url = API_URL + "/applications/download_app/";
 	public static final String TOKEN = "edu.asu.mobicloud.authenticator.token";
 
 	private static final String TOKENPREF = "edu.asu.mobicloud.LoginActivity";

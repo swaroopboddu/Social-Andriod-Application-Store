@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import android.os.AsyncTask;
 import edu.asu.mobicloud.rest.model.ApplicationCapsule;
 import edu.asu.mobicloud.retrofit.RestClient;
 
@@ -21,8 +20,8 @@ public class ApplicationDataProvider extends Observable {
 
 	public void setList(List<ApplicationCapsule> list) {
 		this.list.clear();
-		if(list!=null)
-		this.list.addAll(list);
+		if (list != null)
+			this.list.addAll(list);
 	}
 
 	private ApplicationDataProvider() {
@@ -44,34 +43,30 @@ public class ApplicationDataProvider extends Observable {
 	 * @return
 	 */
 	public List<ApplicationCapsule> getInstalledApps(String tokenId) {
-		new LongOperation().execute(tokenId);
+		list.clear();
+		RestClient.getApplications(tokenId);
 		return list;
 	}
 
-	private class LongOperation extends
-			AsyncTask<String, Void, List<ApplicationCapsule>> {
-
-		@Override
-		protected List<ApplicationCapsule> doInBackground(String... params) {
-			return RestClient.getApplications(params[0]).getApplications();
-
-		}
-
-		@Override
-		protected void onPostExecute(List<ApplicationCapsule> result) {
-			setList(result);
-			setChanged();
-			notifyObservers(list);
-		}
-
-		@Override
-		protected void onPreExecute() {
-		}
-
-		@Override
-		protected void onProgressUpdate(Void... values) {
-		}
-	}
+	/*
+	 * private class LongOperation extends AsyncTask<String, Void,
+	 * List<ApplicationCapsule>> {
+	 * 
+	 * @Override protected List<ApplicationCapsule> doInBackground(String...
+	 * params) { List<ApplicationCapsule> appCapsule =
+	 * RestClient.getApplications( params[0]).getApplications(); if (appCapsule
+	 * != null) return appCapsule; else return new
+	 * ArrayList<ApplicationCapsule>();
+	 * 
+	 * }
+	 * 
+	 * @Override protected void onPostExecute(List<ApplicationCapsule> result) {
+	 * setList(result); setChanged(); notifyObservers(list); }
+	 * 
+	 * @Override protected void onPreExecute() { }
+	 * 
+	 * @Override protected void onProgressUpdate(Void... values) { } }
+	 */
 
 	public void onUpdateCallback(
 			List<edu.asu.mobicloud.rest.model.ApplicationCapsule> list) {
@@ -83,10 +78,10 @@ public class ApplicationDataProvider extends Observable {
 
 	}
 
-	public List<ApplicationCapsule> getAppsByUserId(String developerId) {
+	public List<ApplicationCapsule> getAppsByUserId(String token,
+			String developerId) {
 		list.clear();
-		// TODO: Change it to call the userId rest client later
-		RestClient.getApplications(developerId).getApplications();
+		RestClient.getUserApplications(token, developerId);
 		return list;
 	}
 
@@ -94,6 +89,11 @@ public class ApplicationDataProvider extends Observable {
 		list.clear();
 		RestClient.getApps();
 		return list;
+	}
+
+	public void onFailure() {
+		setChanged();
+		notifyObservers("Login Fail");
 	}
 
 }

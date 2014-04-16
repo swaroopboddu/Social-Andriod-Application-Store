@@ -5,7 +5,9 @@ import edu.asu.mobicloud.fragments.MobiListFragment;
 import edu.asu.mobicloud.retrofit.RestClient;
 import edu.asu.mobicloud.util.PreferencesUtil;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +40,11 @@ public class CreateGroupActivity extends Activity {
 				RestClient.createGroups(prefsUtil
 						.getPreference(MobiListFragment.TOKEN), name.getText()
 						.toString(), description.getText().toString());
+				Intent intent = new Intent(getApplicationContext(),
+						MainActivity.class);
+				startActivity(intent);
+				finish();
+
 			}
 		});
 	}

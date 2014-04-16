@@ -44,6 +44,7 @@
         </activity>
         <activity
             android:name="edu.asu.mobicloud.SearchableActivity"
+            android:icon="@drawable/ic_action_search"
             android:label="@string/title_activity_searchable"
             android:launchMode="singleTop" >
             <intent-filter>

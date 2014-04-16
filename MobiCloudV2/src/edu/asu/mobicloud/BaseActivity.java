@@ -1,6 +1,8 @@
 package edu.asu.mobicloud;
 
-import edu.asu.mobicloud.util.PreferencesUtil;
+import java.util.Observable;
+import java.util.Observer;
+
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
@@ -8,9 +10,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.SearchView;
+import edu.asu.mobicloud.dataproviders.NotificationDataProvider;
+import edu.asu.mobicloud.util.PreferencesUtil;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends Activity implements Observer {
+	public Button notifCount;
+	private int notificationCount;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +40,30 @@ public class BaseActivity extends Activity {
 
 		// Do not iconify the widget;expand it by default
 		searchView.setIconifiedByDefault(false);
+		View count = menu.findItem(R.id.action_badge).getActionView();
+		notifCount = (Button) count.findViewById(R.id.notif_count);
+		notifCount.setText(String.valueOf(notificationCount));
+		notifCount.setOnClickListener(new OnClickListener() {
 
-		return super.onCreateOptionsMenu(menu);
+			@Override
+			public void onClick(View v) {
+				setNotifCount(0);
+				Intent intentNotifications = new Intent(
+						getApplicationContext(), NotificationActivity.class);
+				startActivity(intentNotifications);
+			}
+		});
+		notificationCount = NotificationDataProvider.getInstance()
+				.getList(PreferencesUtil.getToken(getApplicationContext()))
+				.size();
+		NotificationDataProvider.getInstance().addObserver(this);
+		return true;
 
+	}
+
+	private void setNotifCount(int count) {
+		notificationCount = count;
+		invalidateOptionsMenu();
 	}
 
 	@Override
@@ -41,24 +71,38 @@ public class BaseActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.action_search: {
 			onSearchRequested();
-			break;
+			return true;
 		}
 		case R.id.action_creategroup: {
 			Intent intentCreateGroup = new Intent(this,
 					CreateGroupActivity.class);
 			startActivity(intentCreateGroup);
-			break;
+			return true;
 		}
 		case R.id.action_logout: {
 			PreferencesUtil.removeToken(getApplicationContext());
 			Intent intentLogin = new Intent(this, LoginActivity.class);
 			startActivity(intentLogin);
 			finish();
-			break;
+			return true;
+		}
+		case R.id.action_badge: {
+			setNotifCount(0);
+			Intent intentNotifications = new Intent(this,
+					NotificationActivity.class);
+			startActivity(intentNotifications);
+			return true;
 		}
 
 		}
-		return super.onOptionsItemSelected(item);
+		return false;
+	}
+
+	@Override
+	public void update(Observable observable, Object data) {
+		notificationCount = NotificationDataProvider.getInstance()
+				.notificationCount();
+		notifCount.setText(String.valueOf(notificationCount));
 	}
 
 }
