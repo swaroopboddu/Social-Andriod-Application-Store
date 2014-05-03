@@ -3,6 +3,11 @@ Web Application ReadMe file
 "Entire web application has been built on top of CakePHP Framework"
 You can download the latest stable framework here - https://github.com/cakephp/cakephp/zipball/2.4.9
 
+Contribution
+-------------------------------------
+Entire web application has been developed from scratch by us.
+No part of the source code is given by mentor or anyother source.
+
 Pre-Configurations (Check)
 ---------------------------
 Please make sure you have the following as specified in httpd.conf file to ensure framework url rewriting works well.
@@ -40,6 +45,8 @@ webapp/app/webroot --> Webroot for the project
 	'img' - Holds all the images and icons of the application
 	'js' - Holds all the javascript files of the application.
 	'uploads' - Holds all the user uploads E.g., 'Developer applications, images etc'
+
+
 
 Contact
 ----------------------------------------
